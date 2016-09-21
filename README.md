@@ -5,8 +5,18 @@ Serving Images dynamically based on the client device is an important part of We
 
 ImgR is a .NET Class Library written in C# which has inheritable classes that let you manage your Website Images Effectively and Efficiently.
 
+### Why not just compress the Image?
+Image Compression is not the perfect solution because of quality loss and because:
+
+-   Compressing for Mobile would mean that Desktop viewers would get a poor view.
+
+-   Compressing for Desktop would mean that Mobile Viewers would get images that have qualities that are too good for mobile view.
+
+### Why not use css to resize the Images?
+CSS Resize is done on the Client Browser, meaning that the Browser has to download the Image file before resizing is done. This defeats the purpose which is to reduce the amount of data traffic needed by the web pages.
+
 ### Wow, how do I use this?
--   Add a reference to ImgR.DLL in your ASP.NET 4.5.2 MVC Project
+-   Add a reference to [ImgR.DLL](https://github.com/mykeels/ImgR/blob/master/ImgR/bin/Debug/ImgR.dll?raw=true) in your ASP.NET 4.5.2 MVC Project
 -   You will need a folder to store your website images. For this Example, Create an Empty Folder in your application root folder called `Images`
 -   Create a class in your `Controllers` Folder called `ImagesController`
 -   Make `ImagesController` inherit from `ImgR.ImagesController` e.g.   
@@ -52,7 +62,7 @@ This tells ImgR that `Images` is the folder to store and get images
       providerName="System.Data.SqlClient" />
     ```
 
--   And Finally (Yea, Ikr?), Copy the `Images` Folder into your `Views` Folder. This will give you the Views you need to work with ImgR.
+-   And Finally (Yea, Ikr?), Copy the `Views/Images` Folder into your `Views` Folder. This will give you the Views you need to work with ImgR. Click [here]() to download the Views as a compressed folder.
 
 ### How it works
 ImgR uses a Target Device system to manage its Images. Each device possesses the following properties:
