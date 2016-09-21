@@ -1,4 +1,4 @@
-﻿# ImgR.NET
+﻿# ![ImgR Logo](https://github.com/mykeels/ImgR/blob/master/ImgR/Content/logo.png?raw=true).NET
 
 ### Wharrisdis (What is this)?
 Serving Images dynamically based on the client device is an important part of Web Page Resource Optimization. ImgR aims at automating the process and making it easy on both the Server CPU, Client Device and of course You, the Programmer.
