@@ -62,7 +62,7 @@ This tells ImgR that `Images` is the folder to store and get images
       providerName="System.Data.SqlClient" />
     ```
 
--   And Finally (Yea, Ikr?), Copy the `Views/Images` Folder into your `Views` Folder. This will give you the Views you need to work with ImgR. Click [here]() to download the Views as a compressed folder.
+-   And Finally (Yea, Ikr?), Copy the `Views/Images` Folder into your `Views` Folder. This will give you the Views you need to work with ImgR. Click [here](https://github.com/mykeels/ImgR/blob/master/ImgR/Views/Images.zip?raw=true) to download the Views as a compressed folder.
 
 ### How it works
 ImgR uses a Target Device system to manage its Images. Each device possesses the following properties:
