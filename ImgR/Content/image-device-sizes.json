@@ -1,0 +1,2290 @@
+﻿[
+	{
+		"DeviceName":"Acer Iconia Tab A1-810",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2013-05"
+	},
+	{
+		"DeviceName":"Acer Iconia Tab A100",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2011-04"
+	},
+	{
+		"DeviceName":"Acer Iconia Tab A101",
+		"Platform":"Android",
+		"OSVersion":"3.2.1",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2011-05"
+	},
+	{
+		"DeviceName":"Acer Iconia Tab A200",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2012-01"
+	},
+	{
+		"DeviceName":"Acer Iconia Tab A500",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 648,
+		"Height": 1280,
+		"ReleaseDate":"2011-04"
+	},
+	{
+		"DeviceName":"Acer Iconia Tab A501",
+		"Platform":"Android",
+		"OSVersion":"3.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2011-04"
+	},
+	{
+		"DeviceName":"ACER Liquid E2",
+		"Platform":"Android",
+		"OSVersion":"4.2.1",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2013-05"
+	},
+	{
+		"DeviceName":"Ainol Novo 7 Elf 2",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 496,
+		"Height": 1024,
+		"ReleaseDate":"2012-06"
+	},
+	{
+		"DeviceName":"Alcatel One Touch Idol X",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 480,
+		"Height": 800,
+		"ReleaseDate":"2013-07"
+	},
+	{
+		"DeviceName":"Alcatel One Touch T10",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 480,
+		"Height": 800,
+		"ReleaseDate":"2013-03"
+	},
+	{
+		"DeviceName":"Alcatel One Touch 903",
+		"Platform":"Android",
+		"OSVersion":"2.3.6",
+		"Width": 320,
+		"Height": 427,
+		"ReleaseDate":"2012-08"
+	},
+	{
+		"DeviceName":"Alcatel (Vodafone) Smart Mini 875",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2013-07"
+	},
+	{
+		"DeviceName":"Amicroe 7 TouchTAB II",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 480,
+		"Height": 800,
+		"ReleaseDate":"2013-01"
+	},
+	{
+		"DeviceName":"Amicroe 9.7 TouchTAB IV",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2013-05"
+	},
+	{
+		"DeviceName":"Archos 70b (it2)",
+		"Platform":"Android",
+		"OSVersion":"3.2.1",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2012-02"
+	},
+	{
+		"DeviceName":"Archos 80G9",
+		"Platform":"Android",
+		"OSVersion":"3.2",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2011-09"
+	},
+	{
+		"DeviceName":"Arnova 10b G3",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"Arnova 7 G2",
+		"Platform":"Android",
+		"OSVersion":"2.3.1",
+		"Width": 480,
+		"Height": 800,
+		"ReleaseDate":"2011-09"
+	},
+	{
+		"DeviceName":"Arnova 7F G3",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 640,
+		"Height": 1067,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Arnova 8C G3",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 800,
+		"Height": 1067,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"ASUS B1-A71",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2013-01"
+	},
+	{
+		"DeviceName":"ASUS Fonepad",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 601,
+		"Height": 962,
+		"ReleaseDate":"2013-04"
+	},
+	{
+		"DeviceName":"ASUS MeMo Pad ME172V",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2013-01"
+	},
+	{
+		"DeviceName":"ASUS MeMo Pad FHD10/ME302C 10.1",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2013-08"
+	},
+	{
+		"DeviceName":"ASUS Padfone",
+		"Platform":"Android",
+		"OSVersion":"4.0",
+		"Width": 800,
+		"Height": 1128,
+		"ReleaseDate":"2012-06"
+	},
+	{
+		"DeviceName":"ASUS Transformer Pad TF300T",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2012-04"
+	},
+	{
+		"DeviceName":"ASUS Transformer TF101",
+		"Platform":"Android",
+		"OSVersion":"3.1",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2011-04"
+	},
+	{
+		"DeviceName":"ASUS Vivo",
+		"Platform":"Windows RT",
+		"OSVersion":"8.0",
+		"Width": 768,
+		"Height": 1366,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Barnes &amp; Noble Nook HD",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 600,
+		"Height": 960,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"BAUHN AMID-972XS",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2012-09"
+	},
+	{
+		"DeviceName":"BAUHN AMID-9743G",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2013-02"
+	},
+	{
+		"DeviceName":"BAUHN ASP-5000H",
+		"Platform":"Android",
+		"OSVersion":"4.2",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2013-09"
+	},
+	{
+		"DeviceName":"BlackBerry 9520",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"5",
+		"Width": 345,
+		"Height": 691,
+		"ReleaseDate":"2009-11"
+	},
+	{
+		"DeviceName":"BlackBerry Bold 9000",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"4.0.0.223",
+		"Width": 480,
+		"Height": 0,
+		"ReleaseDate":"2008-08"
+	},
+	{
+		"DeviceName":"BlackBerry Bold 9780",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"6.0.0.110",
+		"Width": 480,
+		"Height": 0,
+		"ReleaseDate":"2010-11"
+	},
+	{
+		"DeviceName":"BlackBerry Bold 9790",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"7.0.0.528",
+		"Width": 320,
+		"Height": 0,
+		"ReleaseDate":"2011-12"
+	},
+	{
+		"DeviceName":"BlackBerry Bold 9900",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"7.1.0.342",
+		"Width": 356,
+		"Height": 0,
+		"ReleaseDate":"2011-08"
+	},
+	{
+		"DeviceName":"BlackBerry Curve 9300",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"5.0.0.716",
+		"Width": 311,
+		"Height": 0,
+		"ReleaseDate":"2010-08"
+	},
+	{
+		"DeviceName":"BlackBerry Curve 9300",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"6.0.0.448",
+		"Width": 320,
+		"Height": 0,
+		"ReleaseDate":"2010-08"
+	},
+	{
+		"DeviceName":"BlackBerry Curve 9320",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"7.1.0.569",
+		"Width": 320,
+		"Height": 0,
+		"ReleaseDate":"2010-05"
+	},
+	{
+		"DeviceName":"BlackBerry Curve 9360",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"7.0.0.530",
+		"Width": 320,
+		"Height": 0,
+		"ReleaseDate":"2011-08"
+	},
+	{
+		"DeviceName":"BlackBerry Curve 9380",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"7.0.0.513",
+		"Width": 320,
+		"Height": 406,
+		"ReleaseDate":"2011-12"
+	},
+	{
+		"DeviceName":"BlackBerry PlayBook",
+		"Platform":"Blackberry Tablet OS",
+		"OSVersion":"2.1.0",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2011-04"
+	},
+	{
+		"DeviceName":"BlackBerry Torch 9800",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"6.0.0.353",
+		"Width": 360,
+		"Height": 480,
+		"ReleaseDate":"2010-08"
+	},
+	{
+		"DeviceName":"BlackBerry Torch 9810",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"7.0.0.296",
+		"Width": 320,
+		"Height": 0,
+		"ReleaseDate":"2011-08"
+	},
+	{
+		"DeviceName":"BlackBerry Torch 9860",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"7.0.0.579",
+		"Width": 320,
+		"Height": 505,
+		"ReleaseDate":"2011-09"
+	},
+	{
+		"DeviceName":"BlackBerry Q10",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"10.1.0.1910",
+		"Width": 346,
+		"Height": 0,
+		"ReleaseDate":"2013-04"
+	},
+	{
+		"DeviceName":"BlackBerry Z10",
+		"Platform":"BlackBerry OS",
+		"OSVersion":"10.0.10.690",
+		"Width": 342,
+		"Height": 570,
+		"ReleaseDate":"2013-02"
+	},
+	{
+		"DeviceName":"Dell Venue 8",
+		"Platform":"Windows 8",
+		"OSVersion":"8.1",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"10-2013"
+	},
+	{
+		"DeviceName":"Galaxy Nexus",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2011-11"
+	},
+	{
+		"DeviceName":"HP Slate 7 2800",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2013-06"
+	},
+	{
+		"DeviceName":"HP Slate 21",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 1920,
+		"Height": 0,
+		"ReleaseDate":"2013-10"
+	},
+	{
+		"DeviceName":"HP Touchpad",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2011-07"
+	},
+	{
+		"DeviceName":"HP Touchpad",
+		"Platform":"webOS",
+		"OSVersion":"3.0",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2011-07"
+	},
+	{
+		"DeviceName":"HP Veer",
+		"Platform":"WebOS",
+		"OSVersion":"2.1.1",
+		"Width": 320,
+		"Height": 545,
+		"ReleaseDate":"2011-06"
+	},
+	{
+		"DeviceName":"HTC 7 Mozart",
+		"Platform":"WP7",
+		"OSVersion":"7.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2010-10"
+	},
+	{
+		"DeviceName":"HTC 7 Trophy",
+		"Platform":"WP7",
+		"OSVersion":"7.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2010-10"
+	},
+	{
+		"DeviceName":"HTC A620b",
+		"Platform":"WP8",
+		"OSVersion":"8.0",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2013-01"
+	},
+	{
+		"DeviceName":"HTC Desire",
+		"Platform":"Android",
+		"OSVersion":"2.3.3",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2010-03"
+	},
+	{
+		"DeviceName":"HTC Desire C",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-06"
+	},
+	{
+		"DeviceName":"HTC Desire HD",
+		"Platform":"Android",
+		"OSVersion":"2.3.5",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2010-10"
+	},
+	{
+		"DeviceName":"HTC Desire S",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2011-03"
+	},
+	{
+		"DeviceName":"HTC Desire X",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2012-10"
+	},
+	{
+		"DeviceName":"HTC Desire 700",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2014-01"
+	},
+	{
+		"DeviceName":"HTC Desire Z (Vision)",
+		"Platform":"Android",
+		"OSVersion":"2.2",
+		"Width": 480,
+		"Height": 800,
+		"ReleaseDate":"2010-11"
+	},
+	{
+		"DeviceName":"HTC Droid Eris",
+		"Platform":"Android",
+		"OSVersion":"2.1",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2009-11"
+	},
+	{
+		"DeviceName":"HTC Evo 3D",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 540,
+		"Height": 960,
+		"ReleaseDate":"2011-07"
+	},
+	{
+		"DeviceName":"HTC Incredible 2",
+		"Platform":"Android ",
+		"OSVersion":"2.3.4",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2011-04"
+	},
+	{
+		"DeviceName":"HTC Legend",
+		"Platform":"Android",
+		"OSVersion":"2.2",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2010-03"
+	},
+	{
+		"DeviceName":"HTC MyTouch Slide 4G",
+		"Platform":"Android",
+		"OSVersion":"2.3.4",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2011-07"
+	},
+	{
+		"DeviceName":"HTC One",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2013-03"
+	},
+	{
+		"DeviceName":"HTC One Mini",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2013-07"
+	},
+	{
+		"DeviceName":"HTC One S",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-04"
+	},
+	{
+		"DeviceName":"HTC One SV",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2012-12"
+	},
+	{
+		"DeviceName":"HTC One V",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2012-04"
+	},
+	{
+		"DeviceName":"HTC One X",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"HTC One X+",
+		"Platform":"Android",
+		"OSVersion":"4.3",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"HTC One XL",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"HTC Rio 8S",
+		"Platform":"WP8",
+		"OSVersion":"8.0",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-12"
+	},
+	{
+		"DeviceName":"HTC Sensation XL",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2011-11"
+	},
+	{
+		"DeviceName":"HTC Titan II/4G",
+		"Platform":"WP7",
+		"OSVersion":"7.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-04"
+	},
+	{
+		"DeviceName":"HTC Velocity 4G",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"HTC Wildfire A3333",
+		"Platform":"Android",
+		"OSVersion":"2.2.1",
+		"Width": 267,
+		"Height": 356,
+		"ReleaseDate":"2010-05"
+	},
+	{
+		"DeviceName":"HTC Wildfire S",
+		"Platform":"Android",
+		"OSVersion":"2.3.3",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2011-05"
+	},
+	{
+		"DeviceName":"HTC Windows Phone 8S",
+		"Platform":"WP8",
+		"OSVersion":"8.0",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"HTC Windows Phone 8X (C625b)",
+		"Platform":"WP8",
+		"OSVersion":"8.0",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Huawei Ascend G510",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 320,
+		"Height": 569,
+		"ReleaseDate":"2013-04"
+	},
+	{
+		"DeviceName":"Huawei Ascend Mate",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 480,
+		"Height": 813,
+		"ReleaseDate":"2013-03"
+	},
+	{
+		"DeviceName":"Huawei U8650 Sonic",
+		"Platform":"Android",
+		"OSVersion":"2.3.3",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2011-06"
+	},
+	{
+		"DeviceName":"Huawei U8860",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 320,
+		"Height": 544,
+		"ReleaseDate":"2011-12"
+	},
+	{
+		"DeviceName":"Huawei Y300-0151",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2013-03"
+	},
+	{
+		"DeviceName":"iPad",
+		"Platform":"iOS",
+		"OSVersion":"5.0.1",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2010-03"
+	},
+	{
+		"DeviceName":"iPad 2",
+		"Platform":"iOS",
+		"OSVersion":"5.0.1",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2011-03"
+	},
+	{
+		"DeviceName":"iPad 3",
+		"Platform":"iOS",
+		"OSVersion":"5.1.1",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2012-03"
+	},
+	{
+		"DeviceName":"iPad Air",
+		"Platform":"iOS",
+		"OSVersion":"7.0.3",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2013-10"
+	},
+	{
+		"DeviceName":"iPad Mini",
+		"Platform":"iOS",
+		"OSVersion":"6.0.1",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"iPhone",
+		"Platform":"iOS",
+		"OSVersion":"3.1.3",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2007-06"
+	},
+	{
+		"DeviceName":"iPhone 3G",
+		"Platform":"iOS",
+		"OSVersion":"4.2.1",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2008-07"
+	},
+	{
+		"DeviceName":"iPhone 3GS",
+		"Platform":"iOS",
+		"OSVersion":"6.0a2",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2009-06"
+	},
+	{
+		"DeviceName":"iPhone 4",
+		"Platform":"iOS",
+		"OSVersion":"5.1.1",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2010-06"
+	},
+	{
+		"DeviceName":"iPhone 4S",
+		"Platform":"iOS",
+		"OSVersion":"4.3.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2011-10"
+	},
+	{
+		"DeviceName":"iPhone 5",
+		"Platform":"iOS",
+		"OSVersion":"6.0",
+		"Width": 320,
+		"Height": 568,
+		"ReleaseDate":"2012-09"
+	},
+	{
+		"DeviceName":"iPhone 5c",
+		"Platform":"iOS",
+		"OSVersion":"7.0",
+		"Width": 320,
+		"Height": 568,
+		"ReleaseDate":"2013-09"
+	},
+	{
+		"DeviceName":"iPhone 5s",
+		"Platform":"iOS",
+		"OSVersion":"7.0",
+		"Width": 320,
+		"Height": 568,
+		"ReleaseDate":"2013-09"
+	},
+	{
+		"DeviceName":"iPhone 6",
+		"Platform":"iOS",
+		"OSVersion":"8.0",
+		"Width": 375,
+		"Height": 667,
+		"ReleaseDate":"2014-09"
+	},
+	{
+		"DeviceName":"iPhone 6 Plus",
+		"Platform":"iOS",
+		"OSVersion":"8.0",
+		"Width": 414,
+		"Height": 736,
+		"ReleaseDate":"2014-09"
+	},
+	{
+		"DeviceName":"iPod Touch 4th Gen",
+		"Platform":"iOS",
+		"OSVersion":"5.0.1",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2010-09"
+	},
+	{
+		"DeviceName":"iPod Touch 5th Gen",
+		"Platform":"iOS",
+		"OSVersion":"6.0",
+		"Width": 320,
+		"Height": 568,
+		"ReleaseDate":"2012-10"
+	},
+	{
+		"DeviceName":"Kindle 3",
+		"Platform":"Kindle",
+		"OSVersion":"3.3",
+		"Width": 600,
+		"Height": 0,
+		"ReleaseDate":"2010-08"
+	},
+	{
+		"DeviceName":"Kindle Fire 2",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 600,
+		"Height": 963,
+		"ReleaseDate":"2011-11"
+	},
+	{
+		"DeviceName":"Kindle Fire HD",
+		"Platform":"Android",
+		"OSVersion":"4",
+		"Width": 533,
+		"Height": 801,
+		"ReleaseDate":"2012-09"
+	},
+	{
+		"DeviceName":"Kindle Fire HD 8.9",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 800,
+		"Height": 1220,
+		"ReleaseDate":"2012-10"
+	},
+	{
+		"DeviceName":"Kindle Paperwhite",
+		"Platform":"Kindle",
+		"OSVersion":"5",
+		"Width": 758,
+		"Height": 0,
+		"ReleaseDate":"2012-10"
+	},
+	{
+		"DeviceName":"Kobo eReader Touch",
+		"Platform":"Android",
+		"OSVersion":"2.0.0",
+		"Width": 600,
+		"Height": 0,
+		"ReleaseDate":"2011-06"
+	},
+	{
+		"DeviceName":"Kogan 42&quot; Smart 3D LED TV",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 0,
+		"Height": 1280,
+		"ReleaseDate":"2013-07"
+	},
+	{
+		"DeviceName":"Lenovo IdeaTab A1000",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2013-05"
+	},
+	{
+		"DeviceName":"Lenovo IdeaTab S6000",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2013-06"
+	},
+	{
+		"DeviceName":"Lenovo Yoga Tablet 8",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 602,
+		"Height": 962,
+		"ReleaseDate":"2013-10"
+	},
+	{
+		"DeviceName":"Lenovo Yoga Tablet 10",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2013-11"
+	},
+	{
+		"DeviceName":"LG 55LW6500 TV",
+		"Platform":"Proprietary (TV)",
+		"OSVersion":"5.00.07",
+		"Width": 0,
+		"Height": 1280,
+		"ReleaseDate":"2011-03"
+	},
+	{
+		"DeviceName":"LG Ally",
+		"Platform":"Android",
+		"OSVersion":"2.2.2",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2010-04"
+	},
+	{
+		"DeviceName":"LG G2",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2013-09"
+	},
+	{
+		"DeviceName":"LG Optimus 2x",
+		"Platform":"Android",
+		"OSVersion":"2.3.7",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2011-02"
+	},
+	{
+		"DeviceName":"LG Optimus Black P970",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2011-05"
+	},
+	{
+		"DeviceName":"LG Optimus G E975",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 384,
+		"Height": 640,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"LG Optimus L3 E400",
+		"Platform":"Android",
+		"OSVersion":"2.3.6",
+		"Width": 320,
+		"Height": 427,
+		"ReleaseDate":"2012-02"
+	},
+	{
+		"DeviceName":"LG Optimus L3 II E425f",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 320,
+		"Height": 427,
+		"ReleaseDate":"2013-04"
+	},
+	{
+		"DeviceName":"LG Optimus L7 P700",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"LG Optimus L9 P760",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"LG Optimus Pad V900",
+		"Platform":"Android",
+		"OSVersion":"3.0.1",
+		"Width": 768,
+		"Height": 1280,
+		"ReleaseDate":"2011-05"
+	},
+	{
+		"DeviceName":"LG Viewty KU990",
+		"Platform":"Proprietary (Java)",
+		"OSVersion":"1.2",
+		"Width": 240,
+		"Height": 400,
+		"ReleaseDate":"2008-10"
+	},
+	{
+		"DeviceName":"Microsoft Surface",
+		"Platform":"Windows RT",
+		"OSVersion":"8.0",
+		"Width": 768,
+		"Height": 1366,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Microsoft Surface Pro",
+		"Platform":"Windows 8",
+		"OSVersion":"8.0",
+		"Width": 720,
+		"Height": 1280,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Motorola Defy",
+		"Platform":"Android",
+		"OSVersion":"2.3.4",
+		"Width": 320,
+		"Height": 569,
+		"ReleaseDate":"2010-10"
+	},
+	{
+		"DeviceName":"Motorola Defy Mini",
+		"Platform":"Android",
+		"OSVersion":"2.3.6",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-01"
+	},
+	{
+		"DeviceName":"Motorola Droid Bionic",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2011-09"
+	},
+	{
+		"DeviceName":"Motorola Droid Razr",
+		"Platform":"Android",
+		"OSVersion":"2.3.6",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2011-11"
+	},
+	{
+		"DeviceName":"Motorola Droid 3",
+		"Platform":"Android",
+		"OSVersion":"2.3",
+		"Width": 360,
+		"Height": 559,
+		"ReleaseDate":"2011-07"
+	},
+	{
+		"DeviceName":"Motorola Electrify 2",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2012-07"
+	},
+	{
+		"DeviceName":"Motorola Fire XT",
+		"Platform":"Android",
+		"OSVersion":"2.3.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2011-09"
+	},
+	{
+		"DeviceName":"Motorola FlipOut",
+		"Platform":"Android",
+		"OSVersion":"2.1",
+		"Width": 320,
+		"Height": 240,
+		"ReleaseDate":"2010-06"
+	},
+	{
+		"DeviceName":"Motorola Milestone",
+		"Platform":"Android",
+		"OSVersion":"2.3.7",
+		"Width": 320,
+		"Height": 569,
+		"ReleaseDate":"2009-11"
+	},
+	{
+		"DeviceName":"Motorola Moto G",
+		"Platform":"Android",
+		"OSVersion":"4.3",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2013-11"
+	},
+	{
+		"DeviceName":"Motorola RAZR HD 4G",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2012-09"
+	},
+	{
+		"DeviceName":"Motorola RAZR M 4G",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2012-09"
+	},
+	{
+		"DeviceName":"Motorola RAZR MAXX",
+		"Platform":"Android",
+		"OSVersion":"4.0",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"Motorola Xoom",
+		"Platform":"Android",
+		"OSVersion":"4.1",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2011-05"
+	},
+	{
+		"DeviceName":"Motorola Xoom 2",
+		"Platform":"Android",
+		"OSVersion":"3.2.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2011-12"
+	},
+	{
+		"DeviceName":"Motorola Xoom 2 Media Edition",
+		"Platform":"Android",
+		"OSVersion":"3.2.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2011-12"
+	},
+	{
+		"DeviceName":"Nexus 10",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Nexus 4",
+		"Platform":"Android",
+		"OSVersion":"4.2.1",
+		"Width": 384,
+		"Height": 598,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Nexus 5",
+		"Platform":"Android",
+		"OSVersion":"4.4",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2013-10"
+	},
+	{
+		"DeviceName":"Nexus 7",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 603,
+		"Height": 966,
+		"ReleaseDate":"2012-07"
+	},
+	{
+		"DeviceName":"Nexus 7",
+		"Platform":"Android",
+		"OSVersion":"4.2.1",
+		"Width": 600,
+		"Height": 961,
+		"ReleaseDate":"2012-07"
+	},
+	{
+		"DeviceName":"Nexus 7",
+		"Platform":"Android",
+		"OSVersion":"4.3",
+		"Width": 601,
+		"Height": 962,
+		"ReleaseDate":"2012-07"
+	},
+	{
+		"DeviceName":"Nexus 7 (LCD Density set to 175PPI)",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 731,
+		"Height": 1170,
+		"ReleaseDate":"2012-07"
+	},
+	{
+		"DeviceName":"Nexus 7 (2013)",
+		"Platform":"Android",
+		"OSVersion":"4.3",
+		"Width": 600,
+		"Height": 960,
+		"ReleaseDate":"2013-07"
+	},
+	{
+		"DeviceName":"Nexus One",
+		"Platform":"Android",
+		"OSVersion":"2.3.7",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2010-01"
+	},
+	{
+		"DeviceName":"Nexus S",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2010-10"
+	},
+	{
+		"DeviceName":"Nintendo 3DS",
+		"Platform":"3DS",
+		"OSVersion":"4.3.0-10E",
+		"Width": 416,
+		"Height": 0,
+		"ReleaseDate":"2011-02"
+	},
+	{
+		"DeviceName":"Nintendo 3DS XL",
+		"Platform":"3DS",
+		"OSVersion":"1.7455.EU",
+		"Width": 416,
+		"Height": 0,
+		"ReleaseDate":"2012-07"
+	},
+	{
+		"DeviceName":"Nintendo DSi",
+		"Platform":"DSi",
+		"OSVersion":"507; U; en-GB",
+		"Width": 256,
+		"Height": 0,
+		"ReleaseDate":"2009-04"
+	},
+	{
+		"DeviceName":"Nintendo DSi XL",
+		"Platform":"DSi",
+		"OSVersion":"1.4.4A",
+		"Width": 240,
+		"Height": 0,
+		"ReleaseDate":"2010-03"
+	},
+	{
+		"DeviceName":"Nintendo Wii",
+		"Platform":"Wii",
+		"OSVersion":"4.3",
+		"Width": 800,
+		"Height": 0,
+		"ReleaseDate":"2007-11"
+	},
+	{
+		"DeviceName":"Nintendo Wii U",
+		"Platform":"Wii U",
+		"OSVersion":"1.0.0.7494",
+		"Width": 854,
+		"Height": 0,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Nokia 2700",
+		"Platform":"S40",
+		"OSVersion":"5th Edition",
+		"Width": 240,
+		"Height": 0,
+		"ReleaseDate":"2009-07"
+	},
+	{
+		"DeviceName":"Nokia Asha 300",
+		"Platform":"Proprietary (Nokia)",
+		"OSVersion":"07.03 29-11-11 RM-781",
+		"Width": 234,
+		"Height": 0,
+		"ReleaseDate":"2011-11"
+	},
+	{
+		"DeviceName":"Nokia Asha 302",
+		"Platform":"Proprietary (Nokia)",
+		"OSVersion":"14.53 20-03-12 RM-813",
+		"Width": 314,
+		"Height": 0,
+		"ReleaseDate":"2012-03"
+	},
+	{
+		"DeviceName":"Nokia 500",
+		"Platform":"Symbian",
+		"OSVersion":"Belle",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2011-09"
+	},
+	{
+		"DeviceName":"Nokia 700 (Opera Mobile)",
+		"Platform":"Symbian",
+		"OSVersion":"Belle FP2",
+		"Width": 240,
+		"Height": 427,
+		"ReleaseDate":"2011-09"
+	},
+	{
+		"DeviceName":"Nokia E61i",
+		"Platform":"S60",
+		"OSVersion":"Symbian 9.1",
+		"Width": 320,
+		"Height": 0,
+		"ReleaseDate":"2007-04"
+	},
+	{
+		"DeviceName":"Nokia E71",
+		"Platform":"S60",
+		"OSVersion":"Symbian 9.2",
+		"Width": 320,
+		"Height": 0,
+		"ReleaseDate":"2007-04"
+	},
+	{
+		"DeviceName":"Nokia Lumia 520",
+		"Platform":"WP8",
+		"OSVersion":"8.0",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2013-04"
+	},
+	{
+		"DeviceName":"Nokia Lumia 610",
+		"Platform":"WP7",
+		"OSVersion":"7.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-04"
+	},
+	{
+		"DeviceName":"Nokia Lumia 710",
+		"Platform":"WP7",
+		"OSVersion":"7.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2011-12"
+	},
+	{
+		"DeviceName":"Nokia Lumia 720",
+		"Platform":"WP7",
+		"OSVersion":"8.0",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2013-04"
+	},
+	{
+		"DeviceName":"Nokia Lumia 800",
+		"Platform":"WP7",
+		"OSVersion":"7.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2011-11"
+	},
+	{
+		"DeviceName":"Nokia Lumia 820",
+		"Platform":"WP8",
+		"OSVersion":"8.0",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Nokia Lumia 900",
+		"Platform":"WP7",
+		"OSVersion":"7.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"Nokia Lumia 920",
+		"Platform":"WP8",
+		"OSVersion":"8.0",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Nokia Lumia 925",
+		"Platform":"WP8",
+		"OSVersion":"8.0",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2013-06"
+	},
+	{
+		"DeviceName":"Nokia Lumia 1520",
+		"Platform":"WP8",
+		"OSVersion":"8.0",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2013-11"
+	},
+	{
+		"DeviceName":"Nokia N9",
+		"Platform":"MeeGo",
+		"OSVersion":"1.2",
+		"Width": 320,
+		"Height": 496,
+		"ReleaseDate":"2011-09"
+	},
+	{
+		"DeviceName":"Nokia N900",
+		"Platform":"Maemo",
+		"OSVersion":"5",
+		"Width": 480,
+		"Height": 800,
+		"ReleaseDate":"2009-11"
+	},
+	{
+		"DeviceName":"Nokia N95",
+		"Platform":"S60",
+		"OSVersion":"Symbian 9.2",
+		"Width": 240,
+		"Height": 0,
+		"ReleaseDate":"2007-03"
+	},
+	{
+		"DeviceName":"Palm Pixi",
+		"Platform":"WebOS",
+		"OSVersion":"1.4.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2009-11"
+	},
+	{
+		"DeviceName":"Palm Pre",
+		"Platform":"WebOS",
+		"OSVersion":"2.2",
+		"Width": 320,
+		"Height": 0,
+		"ReleaseDate":"2009-10"
+	},
+	{
+		"DeviceName":"Panasonic Toughpad FZ-A1",
+		"Platform":"Android",
+		"OSVersion":"4.0",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2012-12"
+	},
+	{
+		"DeviceName":"PendoPad 7&quot;",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 480,
+		"Height": 800,
+		"ReleaseDate":"2013-11"
+	},
+	{
+		"DeviceName":"PendoPad 10&quot;",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2013-11"
+	},
+	{
+		"DeviceName":"Pioneer Dreambook",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2010-07"
+	},
+	{
+		"DeviceName":"Samsung Ativ S",
+		"Platform":"WP8",
+		"OSVersion":"8.0",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-12"
+	},
+	{
+		"DeviceName":"Samsung E3210",
+		"Platform":"Proprietary (Java)",
+		"OSVersion":0,
+		"Width": 128,
+		"Height": 0,
+		"ReleaseDate":"2011-05"
+	},
+	{
+		"DeviceName":"Samsung Galaxy 5/Europa I5500",
+		"Platform":"Android",
+		"OSVersion":"2.1-update1",
+		"Width": 320,
+		"Height": 427,
+		"ReleaseDate":"2010-08"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Ace S5830",
+		"Platform":"Android",
+		"OSVersion":"2.3.4",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2011-02"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Ace 2 I8160",
+		"Platform":"Android",
+		"OSVersion":"2.3.6",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Ace Plus S7500",
+		"Platform":"Android",
+		"OSVersion":"2.3.6",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-02"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Beam I8530",
+		"Platform":"Android",
+		"OSVersion":"2.3.6",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2012-07"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Camera GC100",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Mini S5570",
+		"Platform":"Android",
+		"OSVersion":"2.3.4",
+		"Width": 240,
+		"Height": 320,
+		"ReleaseDate":"2011-02"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Mini 2 S6500",
+		"Platform":"Android",
+		"OSVersion":"2.3",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-03"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Note N700",
+		"Platform":"Android",
+		"OSVersion":"2.3.6",
+		"Width": 400,
+		"Height": 640,
+		"ReleaseDate":"2011-10"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Note 10.1 N8010",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2012-08"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Note 10.1 N8010 (Multiscreen Enabled)",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 800,
+		"Height": 637,
+		"ReleaseDate":"2012-08"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Note 10.1 (2014 Edition) P600",
+		"Platform":"Android",
+		"OSVersion":"4.3",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2013-11"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Note 2 N7100",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-09"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Note 3 N9005",
+		"Platform":"Android",
+		"OSVersion":"4.3",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2013-09"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Note 8.0 N5100",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 601,
+		"Height": 962,
+		"ReleaseDate":"2013-04"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Note 8.0 N5110",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 601,
+		"Height": 962,
+		"ReleaseDate":"2013-04"
+	},
+	{
+		"DeviceName":"Samsung Galaxy S I9000",
+		"Platform":"Android",
+		"OSVersion":"2.3.6",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2010-06"
+	},
+	{
+		"DeviceName":"Samsung Galaxy S Duos S7562",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2012-09"
+	},
+	{
+		"DeviceName":"Samsung Galaxy S WiFi YPG70CW",
+		"Platform":"Android",
+		"OSVersion":"2.2",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2011-05"
+	},
+	{
+		"DeviceName":"Samsung Galaxy S2 I9100",
+		"Platform":"Android",
+		"OSVersion":"2.3.6",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2011-04"
+	},
+	{
+		"DeviceName":"Samsung Galaxy S3 I9300",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"Samsung Galaxy S3 Mini I8190",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Samsung Galaxy S4 I9500",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2013-04"
+	},
+	{
+		"DeviceName":"Samsung Galaxy S4 I9505",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2013-04"
+	},
+	{
+		"DeviceName":"Samsung Galaxy S4 Active I9295",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2013-06"
+	},
+	{
+		"DeviceName":"Samsung Galaxy S4 Mini I9190",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2013-07"
+	},
+	{
+		"DeviceName":"Samsung Galaxy S4 Zoom SM-C105",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2013-07"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab 10.1 P7510",
+		"Platform":"Android",
+		"OSVersion":"3.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2011-07"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab 2 10.1 P5110",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab 2 7.0 P3110",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab 3 7.0 T210",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2013-07"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab 3 8.0 T310",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 602,
+		"Height": 962,
+		"ReleaseDate":"2013-07"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab 3 10.1 P5210",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2013-07"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab 3 Kids T2105",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2013-11"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab 7.7 P6810",
+		"Platform":"Android",
+		"OSVersion":"3.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2012-01"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab 7.0 Plus P6210",
+		"Platform":"Android",
+		"OSVersion":"3.2",
+		"Width": 600,
+		"Height": 1024,
+		"ReleaseDate":"2012-01"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab 8.9 P7310",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2011-05"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab 8.9 4G P7320",
+		"Platform":"Android",
+		"OSVersion":"3.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2012-02"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Tab P1000",
+		"Platform":"Android",
+		"OSVersion":"2.3.3",
+		"Width": 400,
+		"Height": 683,
+		"ReleaseDate":"2010-10"
+	},
+	{
+		"DeviceName":"Samsung Galaxy X Cover 2 S7710 ",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2013-03"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Y S5360",
+		"Platform":"Android",
+		"OSVersion":"2.3.6",
+		"Width": 320,
+		"Height": 427,
+		"ReleaseDate":"2011-10"
+	},
+	{
+		"DeviceName":"Samsung Galaxy Young S6310",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2013-02"
+	},
+	{
+		"DeviceName":"Samsung Infuse 4G I997",
+		"Platform":"Android",
+		"OSVersion":"2.3",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2011-05"
+	},
+	{
+		"DeviceName":"Samsung Omnia W I8350",
+		"Platform":"WP7",
+		"OSVersion":"7.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2011-10"
+	},
+	{
+		"DeviceName":"Samsung Omnia 7 I8700",
+		"Platform":"WP7",
+		"OSVersion":"7.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2010-10"
+	},
+	{
+		"DeviceName":"Samsung Wave S8500",
+		"Platform":"Bada",
+		"OSVersion":"1.0",
+		"Width": 240,
+		"Height": 400,
+		"ReleaseDate":"2010-04"
+	},
+	{
+		"DeviceName":"Samsung Wave S8500",
+		"Platform":"Bada",
+		"OSVersion":"2.0.1",
+		"Width": 320,
+		"Height": 534,
+		"ReleaseDate":"2010-04"
+	},
+	{
+		"DeviceName":"Scroll Excel",
+		"Platform":"Android",
+		"OSVersion":"2.3.4",
+		"Width": 480,
+		"Height": 800,
+		"ReleaseDate":"2012-02"
+	},
+	{
+		"DeviceName":"Sony BRAVIA 40 EX520",
+		"Platform":"Proprietary (TV)",
+		"OSVersion":"PKG4.012GAA-0104",
+		"Width": 0,
+		"Height": 1920,
+		"ReleaseDate":"2011-01"
+	},
+	{
+		"DeviceName":"Sony Ericsson Elm",
+		"Platform":"Proprietary (Java)",
+		"OSVersion":"1231-1917 R7CA061 100619",
+		"Width": 240,
+		"Height": 0,
+		"ReleaseDate":"2010-03"
+	},
+	{
+		"DeviceName":"Sony Ericsson Spiro",
+		"Platform":"Proprietary (Java)",
+		"OSVersion":0,
+		"Width": 240,
+		"Height": 0,
+		"ReleaseDate":"2010-08"
+	},
+	{
+		"DeviceName":"Sony Ericsson Xperia Arc",
+		"Platform":"Android",
+		"OSVersion":"2.3.4",
+		"Width": 320,
+		"Height": 569,
+		"ReleaseDate":"2011-03"
+	},
+	{
+		"DeviceName":"Sony Ericsson Xperia Mini ST15i",
+		"Platform":"Android",
+		"OSVersion":"2.3.4",
+		"Width": 320,
+		"Height": 401,
+		"ReleaseDate":"2011-08"
+	},
+	{
+		"DeviceName":"Sony Ericsson Xperia Neo",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 480,
+		"Height": 854,
+		"ReleaseDate":"2011-03"
+	},
+	{
+		"DeviceName":"Sony Ericcson Xperia Play",
+		"Platform":"Android",
+		"OSVersion":"2.3.4",
+		"Width": 425,
+		"Height": 974,
+		"ReleaseDate":"2011-03"
+	},
+	{
+		"DeviceName":"Sony Ericsson Xperia X8",
+		"Platform":"Android",
+		"OSVersion":"2.1.1",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2010-09"
+	},
+	{
+		"DeviceName":"Sony Ericsson Xperia X10",
+		"Platform":"Android",
+		"OSVersion":"2.3.3",
+		"Width": 320,
+		"Height": 569,
+		"ReleaseDate":"2010-03"
+	},
+	{
+		"DeviceName":"Sony PlayStation 3",
+		"Platform":"PlayStation 3",
+		"OSVersion":"4.25",
+		"Width": 0,
+		"Height": 1824,
+		"ReleaseDate":"2006-11"
+	},
+	{
+		"DeviceName":"Sony PlayStation Portable",
+		"Platform":"PlayStation Portable",
+		"OSVersion":"4.2",
+		"Width": 0,
+		"Height": 480,
+		"ReleaseDate":"2005-03"
+	},
+	{
+		"DeviceName":"Sony PlayStation Vita",
+		"Platform":"PlayStation Vita",
+		"OSVersion":"1.00",
+		"Width": 0,
+		"Height": 896,
+		"ReleaseDate":"2012-02"
+	},
+	{
+		"DeviceName":"Sony Tablet P",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 0,
+		"Height": 1024,
+		"ReleaseDate":"2012-09"
+	},
+	{
+		"DeviceName":"Sony Tablet S",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2011-09"
+	},
+	{
+		"DeviceName":"Sony VAIO Tap 20",
+		"Platform":"Windows 8",
+		"OSVersion":"8.0",
+		"Width": 900,
+		"Height": 1600,
+		"ReleaseDate":"2013-06"
+	},
+	{
+		"DeviceName":"Sony Xperia acro S",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-08"
+	},
+	{
+		"DeviceName":"Sony Xperia P",
+		"Platform":"Android",
+		"OSVersion":"2.3.7",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"Sony Xperia S",
+		"Platform":"Android",
+		"OSVersion":"2.3.7",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2012-02"
+	},
+	{
+		"DeviceName":"Sony Xperia Sola",
+		"Platform":"Android",
+		"OSVersion":"2.3.7",
+		"Width": 320,
+		"Height": 569,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"Sony Xperia SP",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2013-04"
+	},
+	{
+		"DeviceName":"Sony Xperia Tablet Z",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2013-05"
+	},
+	{
+		"DeviceName":"Sony Xperia Tipo",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-08"
+	},
+	{
+		"DeviceName":"Sony Xperia U",
+		"Platform":"Android",
+		"OSVersion":"2.3.7",
+		"Width": 320,
+		"Height": 569,
+		"ReleaseDate":"2012-05"
+	},
+	{
+		"DeviceName":"Sony Xperia V",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2012-12"
+	},
+	{
+		"DeviceName":"Sony Xperia Z",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2013-02"
+	},
+	{
+		"DeviceName":"Sony Xperia Z1",
+		"Platform":"Android",
+		"OSVersion":"4.2.2",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2013-09"
+	},
+	{
+		"DeviceName":"Telstra T-Hub 2",
+		"Platform":"Android",
+		"OSVersion":"2.3.7",
+		"Width": 400,
+		"Height": 683,
+		"ReleaseDate":"2012-07"
+	},
+	{
+		"DeviceName":"Tesco Hudl",
+		"Platform":"Android",
+		"OSVersion":"4.2",
+		"Width": 600,
+		"Height": 799,
+		"ReleaseDate":"2013-09"
+	},
+	{
+		"DeviceName":"Toshiba AT100",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2011-07"
+	},
+	{
+		"DeviceName":"Toshiba AT1S0",
+		"Platform":"Android",
+		"OSVersion":"3.2",
+		"Width": 602,
+		"Height": 961,
+		"ReleaseDate":"2012-02"
+	},
+	{
+		"DeviceName":"Toshiba AT200",
+		"Platform":"Android",
+		"OSVersion":"3.2.1",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2012-02"
+	},
+	{
+		"DeviceName":"Toshiba AT300",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 800,
+		"Height": 1280,
+		"ReleaseDate":"2012-06"
+	},
+	{
+		"DeviceName":"Toshiba AT330",
+		"Platform":"Android",
+		"OSVersion":"4.0.3",
+		"Width": 900,
+		"Height": 1600,
+		"ReleaseDate":"2012-07"
+	},
+	{
+		"DeviceName":"Wiko Cink Slim",
+		"Platform":"Android",
+		"OSVersion":"4.1.1",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"Yarvik Xenta Tab 8c",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 768,
+		"Height": 1024,
+		"ReleaseDate":"2013-08"
+	},
+	{
+		"DeviceName":"XBOX 360",
+		"Platform":"XBOX",
+		"OSVersion":"2.0",
+		"Width": 0,
+		"Height": 1050,
+		"ReleaseDate":"2005-11"
+	},
+	{
+		"DeviceName":"Xiaomi MI-3",
+		"Platform":"Android",
+		"OSVersion":"4.2.1",
+		"Width": 360,
+		"Height": 640,
+		"ReleaseDate":"2013-09"
+	},
+	{
+		"DeviceName":"ZTE Open",
+		"Platform":"FireFox OS",
+		"OSVersion":"1.0.0B01",
+		"Width": 320,
+		"Height": 415,
+		"ReleaseDate":"2013-07"
+	},
+	{
+		"DeviceName":"ZTE T22 (Telstra Urbane)",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2012-08"
+	},
+	{
+		"DeviceName":"ZTE T28 (Telstra Active Touch)",
+		"Platform":"Android",
+		"OSVersion":"2.3.5",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2011-05"
+	},
+	{
+		"DeviceName":"ZTE T760 (Telstra Smart-Touch 2)",
+		"Platform":"Android",
+		"OSVersion":"2.3.5",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2012-02"
+	},
+	{
+		"DeviceName":"ZTE T790 (Telstra Pulse)",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 320,
+		"Height": 480,
+		"ReleaseDate":"2013-05"
+	},
+	{
+		"DeviceName":"ZTE T81 (Telstra Frontier 4G)",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 320,
+		"Height": 533,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"ZTE T82 (Telstra Easy Touch 4G)",
+		"Platform":"Android",
+		"OSVersion":"4.0.4",
+		"Width": 360,
+		"Height": 598,
+		"ReleaseDate":"2012-11"
+	},
+	{
+		"DeviceName":"ZTE T83 (Telstra Dave 4G)",
+		"Platform":"Android",
+		"OSVersion":"4.1.2",
+		"Width": 320,
+		"Height": 534,
+		"ReleaseDate":"2013-10"
+	}
+]

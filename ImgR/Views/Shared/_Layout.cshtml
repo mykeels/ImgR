@@ -1,0 +1,231 @@
+﻿@{
+    
+}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="robots" content="noindex, nofollow">
+    <title>@ViewBag.Title - ImgR</title>
+    <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+    <link href="~/Content/ImgR.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/multiple-select/1.2.0/multiple-select.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.min.css" />
+    @RenderSection("head", false)
+</head>
+<body ng-app="ImgRApp">
+    <div>
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="brandimg">
+                        <a href="#">
+                            <img src="~/content/logo.png" alt="ImgR.NET Logo" width="150" />
+                        </a>
+                    </li>
+                    <li class="json-report">
+                        <a href="" class="open_submenu">
+                            <i class="material-icons">&#xE439;</i> Manage Images  <span class="glyphicon glyphicon-menu-right pull-right"></span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="~/images/add"><i class="material-icons">&#xE439;</i> Add New Image</a></li>
+                            <li><a href="~/images/devices/add"><i class="material-icons">&#xE439;</i> Add New Device</a></li>
+                            <li><a href="~/images/"><i class="material-icons">&#xE43C;</i> View Gallery</a></li>
+                            <li><a href="~/images/devices"><i class="material-icons">&#xE43C;</i> View Devices</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row top-row">
+                        <div class="col-sm-2">
+                            <a href="#menu-toggle" class="" id="menu-toggle"><i class="material-icons">&#xE5D2;</i> Menu</a>
+                        </div>
+                        <div class="col-sm-10 text-right pull-right">
+                            <span>Welcome, User</span>
+
+                            <div class="dropdown" style="display: inline-block;">
+                                <button class="dropdown-toggle" style="border: none; background: none;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="material-icons">&#xE8B8;</i> Settings <span class="caret"></span></button>
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Change Password</a></li>
+                                </ul>
+                            </div>
+
+                            <a href="#">
+                                <i class="material-icons">&#xE8AC;</i> Logout
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/multiple-select/1.2.0/multiple-select.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script type="text/javascript" src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        var app = angular.module("ImgRApp", []);
+
+        function url(f) {
+            return "@ImgR.Models.Site.GetLeftUrl()" + f;
+        }
+
+        function errorhandler(err, obj) {
+            console.error(err, obj);
+        }
+
+        String.isNullOrEmpty = function (a) { return null == a || "" == a }, String.prototype._charMatch = function (a) { for (var a = a.toString().toLowerCase(), b = this.valueOf().toLowerCase(), c = Math.max(b.length, a.length), d = 0, e = 0; e < Math.min(a.length, b.length) ; e++) b.charAt(e) === a.charAt(e) && d++; return d / c }, String.prototype._stringMatch = function (a) { a = a.toString(); for (var b = this.valueOf(), c = 0, d = 1, e = "", f = ""; d <= a.length;) b.indexOf(a.substring(c, d)) > 0 ? (f = a.substring(c, d), d += 1) : (e += f, f = "", c = d, d += 1); e += f; var g = 0; return b.charAt(0) == a.charAt(0) && (g += .1), b[b.length - 1] == a[a.length - 1] && (g += .1), b.length == a.length && (g += .1), g += e.length / ((b.length + a.length) / 2) * .8 * this._charMatch(a) }, String.prototype._looksLikeItContains = function (a) { for (var b = this.valueOf(), c = 0, d = c + a.length, e = 0; d <= b.length;) { var f = b.substring(c, d).toString(); e = Math.max(f._stringMatch(a), e), c++, d++ } return e };
+
+        function doText(a, b) { return "string" == typeof a && (a = doc.get(a)), void 0 == b && (b = a.value), "" == b ? (doc.setError(a), !1) : (doc.remError(a), !0) }
+
+        var doc = { setError: function (a) { a.style.border = "1px solid red" }, remError: function (a) { a.style.border = "" }, setErrorById: function (a) { this.setError(this.get(a)) }, remErrorById: function (a) { this.remError(this.get(a)) } };
+
+        String.prototype._replace = function (a, b) { var c = this.valueOf(), d = "", e = c.indexOf(a); if (e >= 0) { for (var f = e + a.length - 1, g = 0; g < e; g++) d += c.charAt(g); for (var h = 0; h < b.length; h++) d += b.charAt(h); var i = c.substring(f + 1, c.length); d += c.length > f + 1 + a.length ? i._replace(a, b) : i } else d += c; return c = "", c = d };
+
+        String.prototype.EncodeURI = function (a) { a = a || []; var b = this; if (!b) return ""; b = b.toString(), b = b.trim(), b = b._replace('"', "-"), b = b._replace(" ", "-"), b = b._replace('"', "-"), b = b._replace("&amp;", "and"), b = b._replace("&", "and"); for (var c = 0; c < 48; c++) { var d = String.fromCharCode(c); null != a && (a.indexOf(String.fromCharCode(c)) >= 0) || (b = b._replace(d, "-")) } for (var c = 58; c < 65; c++) { var d = String.fromCharCode(c); null != a && (a.indexOf(String.fromCharCode(c)) >= 0) || (b = b._replace(d, "-")) } for (var c = 123; c < 200; c++) { var d = String.fromCharCode(c); null != a && (a.indexOf(String.fromCharCode(c)) >= 0) || (b = b._replace(d, "-")) } return b.toLowerCase() };
+
+        app.factory("GenericsFactory", function ($http, $sce) {
+            var obj = {};
+            obj.trustHtml = function (html) {
+                return $sce.trustAsHtml(html);
+            }
+            obj.trustUrl = function (url) {
+                return $sce.trustAsResourceUrl(url);
+            }
+            obj.url = url;
+            if (typeof bill != 'undefined') {
+                obj.bill = bill;
+                obj.convertd = bill.convertd;
+            }
+            obj.bindToScope = function ($scope) {
+                $scope.Date = Date;
+                $scope.Number = Number;
+                $scope.String = String;
+                $scope.Boolean = Boolean;
+                $scope.Array = Array;
+                $scope.decodeFileName = function (filename) {
+                    filename = filename || "";
+                    filename = filename.replace(/([A-Z])/g, ' $1').replace(/^./, function (str) { return str.toUpperCase(); });
+                    filename = filename._replace("-", " ")._capitaliseEachWord();
+                    return filename.split(".").first(filename.split(".").length - 1).join(".");
+                }
+                return obj;
+            }
+            obj.Date = Date;
+            obj.Number = Number;
+            obj.String = String;
+            obj.Boolean = Boolean;
+            return obj;
+        });
+
+        $(document).ready(function () {
+            var str = location.href.toLowerCase();
+            $(".sidebar-nav li a").each(function () {
+                if (str.indexOf($(this).attr("href").toLowerCase()) > -1) {
+                    $("li.activelink").removeClass("activelink");
+                    $(this).parent().addClass("activelink");
+                }
+            });
+            $("li.activelink").parents().each(function () {
+                if ($(this).is("li")) {
+                    $(this).addClass("activelink");
+                }
+            });
+        });
+
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        $('.menutoggle').click(function () {
+            $(this).next('.submenu').slideToggle();
+            return false;
+        });
+        $('.close').click(function () {
+            $('.status_message').fadeOut();
+        });
+        $('.filtertoggle').click(function () {
+            $('.filterdiv').slideToggle();
+        });
+        $('.docstoggle').click(function () {
+            $(this).next('.docs').slideToggle();
+            return false;
+        });
+        $('.open_submenu').click(function () {
+            $(this).next('.submenu').slideToggle();
+            $(this).parent().siblings().children().next().slideUp();
+            return false;
+        });
+
+        $(function () {
+            $('.promodetails').hide();
+            $('.promotoggle').click(function () {
+                $('.promotoggle').not(this).parent().parent().next('.promodetails').slideUp();
+                $(this).parent().parent().next('.promodetails').slideToggle();
+                return false;
+            });
+
+            $('.from').datetimepicker({
+                format: 'DD-MM-YYYY HH:mm'
+            });
+            $('.to').datetimepicker({
+                format: 'DD-MM-YYYY HH:mm',
+                useCurrent: false //Important! See issue #1075
+            });
+            $(".from").on("dp.change", function (e) {
+                $(".from").change();
+                //$('.to').focus();
+                $('.to').data("DateTimePicker").minDate(e.date);
+            });
+            $(".to").on("dp.change", function (e) {
+                $(".to").change();
+                //$('.to').blur();
+                $('.from').data("DateTimePicker").maxDate(e.date);
+            });
+        });
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

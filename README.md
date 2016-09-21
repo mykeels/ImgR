@@ -29,6 +29,12 @@ CSS Resize is done on the Client Browser, meaning that the Browser has to downlo
     public class ImagesController : ImgR.Api.ImagesController { }
     ```
 
+-   Make sure to add the following code to your App_Start/RouteConfig.cs `RegisterRoutes` Method
+
+    ```cs
+    routes.MapMvcAttributeRoutes();
+    ```
+
 -   In your Web.config, add the following in the root (`<configuration>`):
 
     ```xml
@@ -62,7 +68,9 @@ This tells ImgR that `Images` is the folder to store and get images
       providerName="System.Data.SqlClient" />
     ```
 
--   And Finally (Yea, Ikr?), Copy the `Views/Images` Folder into your `Views` Folder. This will give you the Views you need to work with ImgR. Click [here](https://github.com/mykeels/ImgR/blob/master/ImgR/Views/Images.zip?raw=true) to download the Views as a compressed folder.
+-   Copy the files in the `Contents` folder into your `~/Contents` Folder
+
+-   And Finally (Yea, Ikr?), Copy the contents of the `Views` Folder into your `Views` Folder. This will give you the Views you need to work with ImgR. Click [here](https://github.com/mykeels/ImgR/blob/master/ImgR/Views/Images.zip?raw=true) to download the Views as a compressed folder.
 
 ### How it works
 ImgR uses a Target Device system to manage its Images. Each device possesses the following properties:
@@ -135,7 +143,9 @@ If you have suggestions, send me an email, or a [tweet](https://twitter.com/myke
 Thanks! Ikechi Michael I.
 
 ### Contributors
-[Nimisoere Tekena-Lawson](https://github.com/nimisoere) (UI/UX) [(tweet)](https://github.com/nimimccool)
+[Nimisoere Tekena-Lawson](https://github.com/nimisoere) (UI/UX) [(tweet)](https://twitter.com/nimimccool)
+
+[Chilezie Reginald Unachukwu](https://github.com/chilas) (UI/UX) [(tweet)](https://twitter.com/iamchilas)
 
 ### License
 

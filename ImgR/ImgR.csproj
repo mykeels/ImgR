@@ -80,16 +80,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Content\image-device-sizes.json" />
     <None Include="Views\Images.zip" />
-    <None Include="Views\Images\Add.cshtml" />
-    <None Include="Views\Images\AddDevice.cshtml" />
-    <None Include="Views\Images\Details.cshtml" />
-    <None Include="Views\Images\DeviceDetails.cshtml" />
-    <None Include="Views\Images\Devices.cshtml" />
-    <None Include="Views\Images\Edit.cshtml" />
-    <None Include="Views\Images\EditDevice.cshtml" />
-    <None Include="Views\Images\Index.cshtml" />
-    <None Include="Views\Images\Test.cshtml" />
+    <Content Include="Content\logo.png" />
+    <Content Include="Views\Images\Add.cshtml" />
+    <Content Include="Views\Images\AddDevice.cshtml" />
+    <Content Include="Views\Images\Details.cshtml" />
+    <Content Include="Views\Images\DeviceDetails.cshtml" />
+    <Content Include="Views\Images\Devices.cshtml" />
+    <Content Include="Views\Images\Edit.cshtml" />
+    <Content Include="Views\Images\EditDevice.cshtml" />
+    <Content Include="Views\Images\Index.cshtml" />
+    <Content Include="Views\Images\Test.cshtml" />
     <None Include="ImgR.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>ImgR.designer.cs</LastGenOutput>
@@ -100,6 +102,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="ReadMe.md" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -110,6 +113,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ImgR.css" />
     <Content Include="Misc\ImgR-Flowchart.png" />
     <Content Include="Misc\Test-No-Resize.png" />
     <Content Include="Misc\Test-Resize-1366.png" />
