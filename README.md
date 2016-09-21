@@ -72,7 +72,7 @@ When an Image is Uploaded, the user specifies whether or not to create resizes. 
 
 When an Image is accessed via its url e.g. `~/images/[image-file-name]`, the following occurs:
 
-![ImgR Flowchart - How Image Access via Web Request works](Misc/ImgR-Flowchart.png)
+![ImgR Flowchart - How Image Access via Web Request works](https://raw.githubusercontent.com/mykeels/ImgR/master/ImgR/Misc/ImgR-Flowchart.png)
 
 ### Tests
 Let's see how ImgR performs, yea? We have run tests using Chrome's Device Simulator and here are the results ... Drum Roll ...
@@ -82,7 +82,7 @@ Two Images are used. The first is 830 KB and the second is 3.4 MB large. These a
 ##### On a Large Screen [2560x988]
 On a Big 2560x988 Screen, the Images come just as they are in their original size. No attempt is made to resize or compress the images. This is done to prevent loss of quality. 
 
-![](Misc/Test-No-Resize.png)
+![](https://raw.githubusercontent.com/mykeels/ImgR/master/ImgR/Misc/Test-No-Resize.png)
 
 <center><span style='color: red'>The total page size is 4.3 MB</span></center>
 
@@ -91,7 +91,7 @@ On a Big 2560x988 Screen, the Images come just as they are in their original siz
 ##### On a Laptop Screen [1366x768]
 On my laptop screen, the Images are resized, and the first becomes 277 KB while the second is 683 KB. 
 
-![](Misc/Test-Resize-1366.png)
+![](https://raw.githubusercontent.com/mykeels/ImgR/master/ImgR/Misc/Test-Resize-1366.png)
 
 <center><span style='color: #FFAA00'>The total page size is reduced to 1.1 MB. We have saved 3.2 MB, Yaay!</span></center>
 
@@ -100,7 +100,7 @@ On my laptop screen, the Images are resized, and the first becomes 277 KB while 
 ##### On an iPad [768x1024]
 On a Tablet Device, the first image is 101 KB while the second is 276 KB.
 
-![](Misc/Test-Resize-768.png)
+![](https://raw.githubusercontent.com/mykeels/ImgR/master/ImgR/Misc/Test-Resize-768.png)
 
 <center><span style='color: #00AAFF'>The total page size comes down to 528.3 KB. We have saved 3.8 MB, Yaaaay!!</span></center>
 
@@ -109,7 +109,7 @@ On a Tablet Device, the first image is 101 KB while the second is 276 KB.
 ##### On a Galaxy S5 [360x640]
 On a phone screen, the change is quite dramatic. The first image is 23.3 KB and the second is 59.4 KB.
 
-![](Misc/Test-Resize-360.png)
+![](https://raw.githubusercontent.com/mykeels/ImgR/master/ImgR/Misc/Test-Resize-360.png)
 
 <center><span style='color: green'>The total page size becomes 234 KB. We have saved 4.1 MB, Yaaaaaay!!!</span></center>
 
