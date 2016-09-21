@@ -1,0 +1,120 @@
+﻿@using ImgR
+
+@{
+    Layout = "~/Views/Shared/EditLayout.cshtml";
+
+    var image = (ImgR.Models.Image)ViewData["image"];
+    if (image == null)
+    {
+        Response.Redirect("~/images");
+    }
+    var resizes = image.GetResizes();
+    ViewBag.Title = String.IsNullOrEmpty(image.Title) ? "No Title" : image.Title;
+}
+
+@section scripts {
+    <script>
+        function bind_height() {
+            function doforthiselem(me) {
+                var value = $(me).attr("bind-height");
+                var elems = $("[bind-height='" + value + "']");
+                var heights = elems.toArray().map(function (elem) { return $(elem).height(); });
+                if (Math.max.apply(me, heights) > Math.min.apply(me, heights)) $(me).height(Math.max.apply(me, heights));
+            }
+            $("[bind-height]").each(function () {
+                doforthiselem(this);
+            });
+        }
+
+        $(document).ready(function () {
+            bind_height();
+        })
+    </script>
+}
+
+<div class="row pad-5">
+    <div class="col-sm-12">
+        <h3>
+            @(String.IsNullOrEmpty(image.Title) ? "No Title" : image.Title)
+        </h3>
+    </div>
+    <div class="col-sm-12">
+        <h4>Target: <a href="~/images/devices/@image.GetDevice().ShortName">@image.GetDevice().Name</a></h4>
+        <h4>@image.CreationTime.ToLongDateString()</h4>
+    </div>
+    @if (!image.IsResized())
+    {
+        <div class="col-sm-12">
+            <h4 class="label label-default font-30">Default</h4>
+        </div>
+    }
+</div>
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row pad-5">
+            <div class="col-sm-12">
+                <center>
+                    <a href="~/images/@image.Name/edit">
+                        <img class="img img-responsive" style="max-width: 45%;" src="@(ImgR.Models.Site.ResolveURL(image.URL))" alt="@Html.Raw(image.Description)" title="@image.Title" />
+                    </a>
+                </center>
+            </div>
+        </div>
+
+        <div class="row pad-5">
+            <div class="col-sm-3">
+
+            </div>
+            <div class="col-sm-3">
+                <h4>Width: <label id="imgWidth">@image.Width</label></h4>
+            </div>
+            <div class="col-sm-3 text-right">
+                <h4>Height: <label id="imgHeight">@image.Height</label></h4>
+            </div>
+            <div class="col-sm-3">
+
+            </div>
+        </div>
+
+        <div class="row pad-5">
+            <div class="col-sm-12">
+                <div>@Html.Raw(String.IsNullOrEmpty(image.Description) ? "<h4 class='alert alert-danger'>No Description has been provided for this Image. Please provide a description.</h4>" : "<h4 class='alert alert-info'><label>Description: </label>" + image.Description + "</h4>")</div>
+            </div>
+            <div class="col-sm-12 alert alert-info text-center">
+                <h4>
+                    <a href="@ImgR.Models.Site.ResolveURL(image.URL)" target="_blank">@ImgR.Models.Site.ResolveURL(image.URL)</a>
+                </h4>
+            </div>
+        </div>
+
+        @if (!image.IsResized())
+        {
+            <div class="row pad-5">
+                <div class="col-sm-12">
+                    <center>
+                        @foreach (var img in image.GetResizes())
+                        {
+                            <div class="col-sm-2" bind-height="image-title">
+                                <a href="~/images/@img.Name">
+                                    <img class="img img-responsive" src="@ImgR.Models.Site.ResolveURL(img.GetThumbUrl())" alt="@Html.Raw(img.Description)" title="@img.Title" />
+                                </a>
+                                <h4>@(String.IsNullOrEmpty(img.Title) ? "No Title" : img.Title) - @img.GetDevice().ShortName</h4>
+                                <p class="text-center">@img.GetDevice().Width x @img.GetDevice().Height</p>
+                            </div>
+                        }
+                    </center>
+                </div>
+            </div>
+        }
+
+
+        <div class="row pad-5">
+            <div class="col-sm-12">
+
+            </div>
+        </div>
+    </div>
+</div>

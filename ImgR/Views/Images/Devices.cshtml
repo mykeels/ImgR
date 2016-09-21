@@ -1,0 +1,79 @@
+﻿@using ImgR
+
+@{
+    Layout = "~/Views/Shared/EditLayout.cshtml";
+    ViewBag.Title = "Image Devices";
+}
+
+@section scripts {
+<script>
+    app.controller("DevicesCtrl", function ($scope, $http, GenericsFactory) {
+
+    });
+</script>
+}
+
+
+<h2>Image Devices</h2>
+
+<div class="row" ng-controller="DevicesCtrl">
+    <div class="col-sm-12">
+
+        <div class="row pad-5">
+            <div class="col-sm-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Device Name</th>
+                            <th>Short Name</th>
+                            <th>Width</th>
+                            <th>Height</th>
+                            <th>Orientation</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var device in ImgR.Models.Image.Device.Load())
+                        {
+                            <tr>
+                                <td>@device.Name</td>
+                                <td>@device.ShortName</td>
+                                <td>@device.Width</td>
+                                <td>@device.Height</td>
+                                <td>@((device.Orientation == ImgR.Models.Image.Device.DeviceOrientation.Landscape) ? "Landscape" : "Portrait")</td>
+                                <td>
+                                    <a href="~/images/devices/@device.ShortName" class="btn btn-primary">View</a> 
+                                    <a href="~/images/devices/@device.ShortName/edit" class="btn btn-success">Edit</a>
+                                    @if (device.IsDefault)
+                                    {
+                                        <span class="label label-default">Default</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        @if (!String.IsNullOrEmpty((string)ViewData["error-message"]))
+        {
+        <div class="row pad-15">
+            <div class="col-sm-12 alert-danger">
+                <h4>@ViewData["error-message"]</h4>
+            </div>
+        </div>
+        }
+
+        @if (!String.IsNullOrEmpty((string)ViewData["success-message"]))
+        {
+        <div class="row pad-15">
+            <div class="col-sm-12 alert-success">
+                <h4>@ViewData["success-message"]</h4>
+            </div>
+        </div>
+        }
+
+    </div>
+</div>

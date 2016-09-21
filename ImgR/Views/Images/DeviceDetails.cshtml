@@ -1,0 +1,129 @@
+﻿@using ImgR
+
+@{
+    Layout = "~/Views/Shared/EditLayout.cshtml";
+    ViewBag.Title = "Image Devices";
+
+    var device = (ImgR.Models.Image.Device)ViewData["device"];
+}
+
+@section scripts {
+    <script>
+    app.controller("DeviceDetailCtrl", function ($scope, $http, GenericsFactory) {
+
+    });
+    </script>
+}
+
+
+<div class="row pad-5">
+    <div class="col-sm-3">
+        <h2>@device.Name</h2>
+    </div>
+    <div class="col-sm-9 text-right">
+        @if (device.IsDefault)
+        {
+            <small class="label label-default font-20">Default</small>
+        }
+    </div>
+    <div class="col-sm-12">
+        <p>The Device with the largest screen area should be your default device.</p>
+    </div>
+</div>
+
+<div class="row" ng-controller="DevicesCtrl">
+    <div class="col-sm-12">
+
+        <div class="row pad-5">
+            <div class="col-sm-3">
+                <h4 class="bold">Name:</h4>
+            </div>
+            <div class="col-sm-9">
+                <h4>@device.Name</h4>
+            </div>
+        </div>
+
+        <div class="row pad-5">
+            <div class="col-sm-3">
+                <h4 class="bold">Short Name:</h4>
+            </div>
+            <div class="col-sm-9">
+                <h4>@device.ShortName</h4>
+            </div>
+        </div>
+
+        <div class="row pad-5">
+            <div class="col-sm-3">
+                <h4 class="bold">Device Size:</h4>
+            </div>
+            <div class="col-sm-9">
+                <h4>@device.Width x @device.Height</h4>
+            </div>
+        </div>
+
+        <div class="row pad-5">
+            <div class="col-sm-3">
+                <h4 class="bold">Screen Orientation:</h4>
+            </div>
+            <div class="col-sm-9">
+                <h4>@device.GetOrientation()</h4>
+            </div>
+        </div>
+
+        <div class="row pad-5">
+            <div class="col-sm-3">
+                <h4 class="bold">User Agent:</h4>
+            </div>
+            @if (String.IsNullOrEmpty(device.UserAgent))
+            {
+                <div class="col-sm-9 alert-danger">
+                    <h4>No User Agent String Specified</h4>
+                </div>
+            }
+            else
+            {
+                <div class="col-sm-9">
+                    <h4>@device.UserAgent</h4>
+                </div>
+            }
+
+        </div>
+
+        @if (device.IsDefault)
+        {
+            <div class="row pad-5">
+                <div class="col-sm-12 alert-info">
+                    <h4>This is the Saved Default Device Orientation</h4>
+                </div>
+            </div>
+        }
+
+        <div class="row pad-5">
+            <div class="col-sm-12">
+                <a href="~/images/devices/@device.ShortName/edit" class="btn btn-success">Edit Device</a> 
+                <a href="~/images/devices/" class="btn btn-primary">View Devices</a>
+            </div>
+        </div>
+        
+
+
+        @if (!String.IsNullOrEmpty((string)ViewData["error-message"]))
+        {
+            <div class="row pad-15">
+                <div class="col-sm-12 alert-danger">
+                    <h4>@ViewData["error-message"]</h4>
+                </div>
+            </div>
+        }
+
+        @if (!String.IsNullOrEmpty((string)ViewData["success-message"]))
+        {
+            <div class="row pad-15">
+                <div class="col-sm-12 alert-success">
+                    <h4>@ViewData["success-message"]</h4>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

@@ -1,0 +1,88 @@
+﻿@using ImgR
+
+@{
+    Layout = null;
+
+    var image_rows = ImgR.Models.Image.GetImages(true).Where((img) => img.ResizeOf == 0).Paginate(12);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Image Gallery Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="http://static.wakanow.com/en-ng/common/css/style.css" />
+    <script>
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function setCookie(name, value, days) {
+            var expires = ";";
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        setCookie("screen-size", screen.width + "-" + screen.height, 30);
+    </script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            @foreach (var images in image_rows)
+            {
+                <div class="row pad-5">
+                    @foreach (var img in images)
+                {
+                        <div class="col-md-4 col-sm-6" bind-height="image-box">
+                            <a href="@ImgR.Models.Site.ResolveURL(img.URL)" data-lightbox="sample-images" data-title="Click the right half of the image to move forward.">
+                                <img class="img img-responsive" src="@ImgR.Models.Site.ResolveURL(img.URL)" bind-height="image-elem" alt="@Html.Raw(img.Description)" title="@img.Title" />
+                            </a>
+                            <h4 bind-height="image-title">@(String.IsNullOrEmpty(img.Title) ? "No Title" : img.Title) - @img.GetDevice().ShortName</h4>
+                            <p class="text-center">@img.GetDevice().Width x @img.GetDevice().Height</p>
+                        </div>
+                    }
+                </div>
+            }
+
+            @if (image_rows.IsEmpty())
+            {
+                <div class="col-sm-12 alert alert-info top25">
+                    <h3>There are no images in this gallery.</h3>
+                </div>
+            }
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script>
+        function bind_height() {
+            function doforthiselem(me) {
+                var value = $(me).attr("bind-height");
+                var elems = $("[bind-height='" + value + "']");
+                var heights = elems.toArray().map(function (elem) { return $(elem).height(); });
+                if (Math.max.apply(me, heights) > Math.min.apply(me, heights)) $(me).height(Math.max.apply(me, heights));
+            }
+            $("[bind-height]").each(function () {
+                doforthiselem(this);
+            });
+        }
+
+        $(document).ready(function () {
+            bind_height();
+        });
+
+    </script>
+</body>
+</html>

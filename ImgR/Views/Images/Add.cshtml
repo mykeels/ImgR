@@ -1,0 +1,171 @@
+﻿@using ImgR
+
+@{
+    Layout = "~/Views/Shared/EditLayout.cshtml";
+    ViewBag.Title = "Add Image";
+
+    var sessionImage = (ImgR.Models.Image)Session["sessionTempImage"];
+    var viewImage = (ImgR.Models.Image)Session["viewTempImage"];
+}
+
+@section head {
+    <style>
+        .pad-50 {
+            padding: 50px;
+        }
+    </style>
+}
+
+@section scripts {
+    <script>
+        function readURL(input, imgElem) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $(imgElem).attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        app.controller("AddImageCtrl", function ($scope, $http, GenericsFactory) {
+
+        });
+
+        $(document).ready(function () {
+            $(".uploadbox").click(function () {
+                $("#fileUpload").click();
+            });
+            $("#fileUpload").change(function () {
+                readURL(this, $(".uploadbox center img"));
+                $(".uploadbox h4").hide();
+                $(".submit-box").show();
+            });
+        });
+
+        var dragBox = document.getElementById("dragBox");
+        var fileUpload = document.getElementById("fileUpload");
+
+        function FileDragHover(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            //e.target.className = (e.type == "dragover" ? "hover" : "");
+            //console.log(e);
+        }
+
+        function FileSelectHandler(e) {
+            FileDragHover(e);
+            var files = e.target.files || e.dataTransfer.files;
+            /*for (var i = 0, f; f = files[i]; i++) {
+                ParseFile(f);
+            }*/
+            console.log(files);
+            if (files.length > 0) {
+                readURL({ files: files }, $(".uploadbox center img"));
+                $(".uploadbox h4").hide();
+                $(".submit-box").show();
+            }
+        }
+
+        dragBox.addEventListener("dragover", FileDragHover, false);
+        dragBox.addEventListener("dragleave", FileDragHover, false);
+        dragBox.addEventListener("drop", FileSelectHandler, false);
+    </script>
+}
+
+<h2>Add an Image</h2>
+
+<form action="~/images/add" method="post" enctype="multipart/form-data">
+    <div class="row" ng-controller="AddImageCtrl">
+        <div class="col-sm-12">
+            @if (sessionImage != null)
+            {
+                <div class="row pad-5">
+                    <div class="col-sm-12">
+                        <center>
+                            <img class="img img-responsive" style="max-width:30%;" src="@ImgR.Models.Site.ResolveURL(String.IsNullOrEmpty(sessionImage?.URL) ? "" : sessionImage?.URL)"
+                                 title="@sessionImage.Title" alt="@sessionImage.Description" />
+                            <a href="~/images/temp/delete" class="btn btn-danger top-10">Delete Image</a>
+                        </center>
+                    </div>
+                </div>
+            }
+
+            <div class="row pad-5">
+                <div class="col-sm-12">
+                    <h4>Upload an Image, then Provide its Information</h4>
+                </div>
+            </div>
+            
+            @if (sessionImage != null)
+            {
+                <div class="row pad-5">
+                    <div class="col-sm-2">
+                        <h4 class="required">Title</h4>
+                    </div>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="text" name="Title" onkeyup="doText(this)" required />
+                    </div>
+                </div>
+
+                <div class="row pad-5">
+                    <div class="col-sm-2">
+                        <h4>Category</h4>
+                    </div>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="text" name="Category" required />
+                    </div>
+                </div>
+
+                <div class="row pad-5">
+                    <div class="col-sm-2">
+                        <h4>Description</h4>
+                    </div>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" name="Description"></textarea>
+                    </div>
+                </div>
+
+                <div class="row pad-5">
+                    <div class="col-sm-2">
+                        <h4>Use Resize</h4>
+                    </div>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="checkbox" name="ResizeForDevices" />
+                    </div>
+                </div>
+
+                <div class="row pad-5 submit-box">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-9">
+                        <input type="submit" class="btn btn-success" id="submit-btn" value="Submit Image" />
+                        <a href="~/images" class="btn btn-danger">Cancel</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row pad-5" id="dragBox">
+                    <div class="col-sm-12 pad-50 text-center bordered pointer uploadbox">
+                        <h4>Drag and Drop or Click to Add Image</h4>
+                        <center>
+                            <img class="img img-responsive" src="" style="max-width:30%;" />
+                        </center>
+                    </div>
+                    <input id="fileUpload" name="Data" type="file" accept="image/*" capture="camera" class="hidden" />
+                </div>
+
+                <div class="row pad-5 submit-box" style="display: none">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-9">
+                        <input type="submit" class="btn btn-success" id="submit-btn" value="Create Image" />
+                        <a href="~/images" class="btn btn-danger">Cancel</a>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</form>

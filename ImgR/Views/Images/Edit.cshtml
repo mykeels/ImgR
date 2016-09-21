@@ -1,0 +1,161 @@
+﻿@using ImgR
+
+@{
+    Layout = "~/Views/Shared/EditLayout.cshtml";
+
+    var image = (ImgR.Models.Image)ViewData["image"];
+    if (image == null)
+    {
+        Response.Redirect("~/images");
+    }
+    var resizes = image.GetResizes();
+    ViewBag.Title = String.IsNullOrEmpty(image.Title) ? "No Title" : image.Title;
+}
+
+@section scripts {
+    <script>
+        function readURL(input, imgElem) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $(imgElem).attr('src', e.target.result);
+                    $("#imgWidth").html($(imgElem)[0].naturalWidth);
+                    $("#imgHeight").html($(imgElem)[0].naturalHeight);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function bind_height() {
+            function doforthiselem(me) {
+                var value = $(me).attr("bind-height");
+                var elems = $("[bind-height='" + value + "']");
+                var heights = elems.toArray().map(function (elem) { return $(elem).height(); });
+                if (Math.max.apply(me, heights) > Math.min.apply(me, heights)) $(me).height(Math.max.apply(me, heights));
+            }
+            $("[bind-height]").each(function () {
+                doforthiselem(this);
+            });
+        }
+
+        $(document).ready(function () {
+            bind_height();
+
+            $("#imgDisplay").click(function () {
+                $("[name='Data']").click();
+            });
+
+            $("#fileUpload").change(function () {
+                readURL(this, $("#imgDisplay"));
+            });
+        })
+    </script>
+}
+
+
+<form action="~/images/@image.Name/edit" method="post" enctype="multipart/form-data">
+
+    <div class="row pad-5">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10"></div>
+            </div>
+            <h3>
+                <label>Image Title</label>
+                <input type="text" class="form-control font18 hidden" value="@image.Name" name="Name" required />
+                <input type="text" class="form-control font18" value="@(String.IsNullOrEmpty(image.Title) ? "No Title" : image.Title)" name="Title" required />
+            </h3>
+            <h3>
+                <label>Category</label>
+                <input type="text" class="form-control font18 left" value="@(String.IsNullOrEmpty(image.Category) ? "No Category" : image.Category)" name="Category" required />
+            </h3>
+        </div>
+        <div class="col-sm-12">
+            <h4>Target: <a href="~/images/devices/@image.GetDevice().ShortName">@image.GetDevice().Name</a></h4>
+            <h4>@image.CreationTime.ToLongDateString()</h4>
+        </div>
+        @if (!image.IsResized())
+        {
+            <div class="col-sm-12">
+                <h4 class="label label-default font-30">Default</h4>
+            </div>
+        }
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row pad-5">
+                <div class="col-sm-12">
+                    <center>
+                        <img class="img img-responsive" style="max-width: 45%;" src="@(ImgR.Models.Site.ResolveURL(image.URL))" alt="@Html.Raw(image.Description)" title="@image.Title" id="imgDisplay" />
+                        <input type="file" class="hidden" id="fileUpload" name="Data" />
+                    </center>
+                </div>
+            </div>
+
+            <div class="row pad-5">
+                <div class="col-sm-3">
+
+                </div>
+                <div class="col-sm-3">
+                    <h4>Width: <label id="imgWidth">@image.Width</label></h4>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <h4>Height: <label id="imgHeight">@image.Height</label></h4>
+                </div>
+                <div class="col-sm-3">
+
+                </div>
+            </div>
+
+            <div class="row pad-5">
+                <div class="col-sm-12">
+                    <h4>
+                        <label>Image Description</label>
+                        <textarea class="form-control" name="Description">@Html.Raw(image.Description)</textarea>
+                    </h4>
+                </div>
+                <div class="col-sm-12 text-center pad-20">
+                    <input type="submit" class="btn btn-primary" value="Submit Changes" />
+                </div>
+                <div class="col-sm-12 alert alert-info text-center top-10">
+                    <h4>
+                        <a href="@ImgR.Models.Site.ResolveURL(image.URL)" target="_blank">@ImgR.Models.Site.ResolveURL(image.URL)</a>
+                    </h4>
+                </div>
+            </div>
+
+            @if (!image.IsResized())
+            {
+                <div class="row pad-5">
+                    <div class="col-sm-12">
+                        <center>
+                            @foreach (var img in image.GetResizes())
+                            {
+                                <div class="col-sm-2" bind-height="image-title">
+                                    <a href="~/images/@img.Name">
+                                        <img class="img img-responsive" src="@ImgR.Models.Site.ResolveURL(img.GetThumbUrl())" alt="@Html.Raw(img.Description)" title="@img.Title" />
+                                    </a>
+                                    <h4>@(String.IsNullOrEmpty(img.Title) ? "No Title" : img.Title) - @img.GetDevice().ShortName</h4>
+                                    <p class="text-center">@img.GetDevice().Width x @img.GetDevice().Height</p>
+                                </div>
+                            }
+                        </center>
+                    </div>
+                </div>
+            }
+
+
+            <div class="row pad-5">
+                <div class="col-sm-12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

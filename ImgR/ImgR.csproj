@@ -80,6 +80,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Views\Images.zip" />
+    <None Include="Views\Images\Add.cshtml" />
+    <None Include="Views\Images\AddDevice.cshtml" />
+    <None Include="Views\Images\Details.cshtml" />
+    <None Include="Views\Images\DeviceDetails.cshtml" />
+    <None Include="Views\Images\Devices.cshtml" />
+    <None Include="Views\Images\Edit.cshtml" />
+    <None Include="Views\Images\EditDevice.cshtml" />
+    <None Include="Views\Images\Index.cshtml" />
+    <None Include="Views\Images\Test.cshtml" />
     <None Include="ImgR.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>ImgR.designer.cs</LastGenOutput>

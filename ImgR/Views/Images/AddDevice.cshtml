@@ -1,0 +1,144 @@
+﻿@using ImgR
+
+@{
+    Layout = "~/Views/Shared/EditLayout.cshtml";
+    ViewBag.Title = "Add Image Device";
+}
+
+@section scripts {
+    <script>
+        app.controller("AddDeviceCtrl", function ($scope, $http, GenericsFactory) {
+            function DeviceAdd() {
+                this.Name = "";
+                this.ShortName = "";
+                this.UserAgent = "";
+                this.Width = 800;
+                this.Height = 600;
+                this.Portrait = 0;
+            }
+
+            $scope.getShortName = function (name) {
+                var nameSections = name.split(" ");
+                var ret = "";
+                ret += nameSections[0].substring(0, Math.min(3, nameSections[0].length - 1));
+                for (var i = 1; i < nameSections.length; i++) {
+                    ret += "-" + nameSections[i].substring(0, Math.min(2, nameSections[0].length - 1));
+                }
+                return ret.EncodeURI();
+            }
+
+            $scope.allDevices = [];
+            $http.get(url("scripts/json/image-device-sizes.json")).success(function (allDevices) {
+                $scope.allDevices = allDevices;
+                angular.element("[name='Name']").autocomplete({
+                    source: function (request, response) {
+                        response(allDevices.filter(function (device) {
+                            return device.DeviceName._looksLikeItContains(request.term) > 0.6;
+                        }).sort(function (a, b) {
+                            return a.DeviceName._looksLikeItContains(request.term) > b.DeviceName._looksLikeItContains(request.term);
+                        }).select("DeviceName").first(12));
+                    },
+                    minLength: 1,
+                    select: function (event, ui) {
+                        console.log(ui, ui.item.value, $scope.allDevices.where('DeviceName', ui.item.value));
+                        angular.element("[name='Width']").val($scope.allDevices.where('DeviceName', ui.item.value).first().Width);
+                        angular.element("[name='Height']").val($scope.allDevices.where('DeviceName', ui.item.value).first().Height);
+                        angular.element("[name='ShortName']").val($scope.getShortName(ui.item.value));
+                    }
+                });
+            }).error(errorhandler);
+        });
+
+        
+    </script>
+}
+
+
+<h2>Add Image Device</h2>
+
+<form action="~/images/devices/add" method="post">
+    <div class="row" ng-controller="AddDeviceCtrl">
+        <div class="col-sm-12">
+
+            <div class="row pad-5">
+                <div class="col-sm-3">
+                    <h4 class="required">Name</h4>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" placeholder="Device Name" name="Name" onkeyup="doText(this)" required />
+                </div>
+            </div>
+
+            <div class="row pad-5">
+                <div class="col-sm-3">
+                    <h4 class="required">Short Name</h4>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" placeholder="Device Short Name" name="ShortName" onkeyup="doText(this)" required />
+                </div>
+            </div>
+
+            <div class="row pad-5">
+                <div class="col-sm-3">
+                    <h4 class="required">Width</h4>
+                </div>
+                <div class="col-sm-3">
+                    <input type="number" name="Width" class="form-control" min="1" value="800" required />
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="required">Height</h4>
+                </div>
+                <div class="col-sm-3">
+                    <input type="number" name="Height" class="form-control" min="1" value="600" required />
+                </div>
+            </div>
+
+            <div class="row pad-5">
+                <div class="col-sm-3">
+                    <h4 class="required">Screen Orientation</h4>
+                </div>
+                <div class="col-sm-9">
+                    <select class="form-control" name="Orientation" required>
+                        <option value="0">Portrait</option>
+                        <option value="1">Landscape</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row pad-5">
+                <div class="col-sm-3">
+                    <h4>User Agent</h4>
+                </div>
+                <div class="col-sm-9">
+                    <textarea class="form-control" name="UserAgent" placeholder="User Agent String"></textarea>
+                </div>
+            </div>
+
+            <div class="row pad-15">
+                <div class="col-sm-12 text-right">
+                    <input type="submit" class="btn btn-success darkblue" value="Create Image Device" />
+                    <a href="~/images/devices" class="btn btn-danger">Cancel</a>
+                </div>
+            </div>
+
+            @if (!String.IsNullOrEmpty((string)ViewData["error-message"]))
+            {
+                <div class="row pad-15">
+                    <div class="col-sm-12 alert-danger">
+                        <h4>@ViewData["error-message"]</h4>
+                    </div>
+                </div>
+            }
+
+            @if (!String.IsNullOrEmpty((string)ViewData["success-message"]))
+            {
+                <div class="row pad-15">
+                    <div class="col-sm-12 alert-success">
+                        <h4>@ViewData["success-message"]</h4>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</form>

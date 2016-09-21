@@ -1,0 +1,58 @@
+﻿@using ImgR
+
+@{
+    Layout = "~/Views/Shared/EditLayout.cshtml";
+    ViewBag.Title = "Image Gallery";
+
+    var image_rows = ImgR.Models.Image.GetImages(true).ToList().Paginate(12);
+}
+
+@section scripts {
+    <script>
+        function bind_height() {
+            function doforthiselem(me) {
+                var value = $(me).attr("bind-height");
+                var elems = $("[bind-height='" + value + "']");
+                var heights = elems.toArray().map(function (elem) { return $(elem).height(); });
+                if (Math.max.apply(me, heights) > Math.min.apply(me, heights)) $(me).height(Math.max.apply(me, heights));
+            }
+            $("[bind-height]").each(function () {
+                doforthiselem(this);
+            });
+        }
+
+        $(document).ready(function () {
+            bind_height();
+        });
+    </script>
+}
+
+<h2>Image Gallery</h2>
+
+<div class="row">
+    <div class="col-sm-12">
+        @foreach (var images in image_rows)
+        {
+            <div class="row pad-5">
+                @foreach (var img in images)
+                {
+                    <div class="col-sm-2" bind-height="image-title">
+                        <a href="~/images/@img.Name">
+                            <img class="img img-responsive" src="@ImgR.Models.Site.ResolveURL(img.GetThumbUrl())" alt="@Html.Raw(img.Description)" title="@img.Title" />
+                        </a>
+                        <h4>@(String.IsNullOrEmpty(img.Title) ? "No Title" : img.Title) - @img.GetDevice().ShortName</h4>
+                        <p class="text-center">@img.GetDevice().Width x @img.GetDevice().Height</p>
+                    </div>
+                }
+            </div>
+        }
+
+        @if (image_rows.IsEmpty())
+        {
+            <div class="col-sm-12 alert alert-info top25">
+                <h3>There are no images in this gallery.</h3>
+            </div>
+        }
+        
+    </div>
+</div>
