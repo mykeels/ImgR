@@ -15,13 +15,6 @@ C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\WebTest
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\WebTest.dll
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\WebTest.pdb
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\ImgR.dll
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.AI.Web.dll
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.ApplicationInsights.dll
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Newtonsoft.Json.dll
@@ -37,11 +30,6 @@ C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\System.
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Elmah.dll
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\System.Data.SqlServerCe.dll
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\ImgR.pdb
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.AI.Web.xml
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.ApplicationInsights.xml
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\System.Web.Razor.xml
 C:\Users\michaeli\Documents\Visual Studio 2015\Projects\ImgR\WebTest\bin\System.Web.Webpages.xml
