@@ -93,11 +93,13 @@ namespace ImgR.Models
             }
         }
 
-        public static IEnumerable<Image> GetImagesByCategory(string category, bool onlyActive = true)
+        public static IEnumerable<Image> GetImagesByCategory(string category, bool onlyActive = true, int ownerType = 0, long ownerID = 0)
         {
             using (ImgRDataContext db = new ImgRDataContext())
             {
-                foreach(tbl_Image img in (from pp in db.tbl_Images where pp.Category.Equals(category) && (!onlyActive || (Convert.ToBoolean(pp.Active) == true)) select pp))
+                foreach(tbl_Image img in (from pp in db.tbl_Images where pp.Category.Equals(category) && (!onlyActive || (Convert.ToBoolean(pp.Active) == true))
+                                           && (ownerType.Equals(0) || pp.OwnerType == Convert.ToInt32(ownerType)) && (ownerID.Equals(0) || Convert.ToInt64(pp.OwnerID) == ownerID)
+                                          select pp))
                 {
                     Image ret = (new Image()).Map(img);
                     yield return ret;
@@ -179,9 +181,10 @@ namespace ImgR.Models
             }
         }
 
-        public void SaveTransforms()
+        public List<Image> SaveTransforms()
         {
-            Image.Device.GetTransforms(this).ForEach((imgT) =>
+            var transforms = Image.Device.GetTransforms(this);
+            transforms.ForEach((imgT) =>
             {
                 try
                 {
@@ -199,6 +202,7 @@ namespace ImgR.Models
                     Site.LogError(ex);
                 }
             });
+            return transforms;
         }
 
         public static void Edit(Image img)
@@ -241,7 +245,7 @@ namespace ImgR.Models
             }
         }
 
-        public static void Add(Image img)
+        public static IEnumerable<Image> Add(Image img)
         {
             img.Name = CreateImageName();
             img.Extension = "jpg";
@@ -272,9 +276,13 @@ namespace ImgR.Models
                 if (img.Data != null) img.Data.ToBitmap().Scale(160).Save(Site.MapPath(img.GetThumbUrl()), GetImageFormat(img.Extension));
                 img.CreationTime = DateTime.Now;
                 img.ID = AddToDatabase(img);
+                yield return img;
                 if (img.ResizeForDevices)
                 {
-                    img.SaveTransforms();
+                    foreach (var imgT in img.SaveTransforms())
+                    {
+                        yield return imgT;
+                    }
                 }
                 if (willReplaceExistingImage)
                 {

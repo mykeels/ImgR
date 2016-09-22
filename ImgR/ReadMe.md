@@ -17,8 +17,10 @@ CSS Resize is done on the Client Browser, meaning that the Browser has to downlo
 
 ### Wow, how do I use this?
 -   Add a reference to [ImgR.DLL](https://github.com/mykeels/ImgR/blob/master/ImgR/bin/Debug/ImgR.dll?raw=true) in your ASP.NET 4.5.2 MVC Project
+
 -   You will need a folder to store your website images. For this Example, Create an Empty Folder in your application root folder called `Images`
--   Create a class in your `Controllers` Folder called `ImagesController`
+
+<!---   Create a class in your `Controllers` Folder called `ImagesController`
 -   Make `ImagesController` inherit from `ImgR.ImagesController` e.g.   
     ```cs
     public class ImagesController : ImgR.ImagesController { }
@@ -27,7 +29,7 @@ CSS Resize is done on the Client Browser, meaning that the Browser has to downlo
 -   Create another class in your `Controllers/API` Folder also called `ImagesController`, and make it inherit from `ImgR.Api.ImagesController` e.g.
     ```cs
     public class ImagesController : ImgR.Api.ImagesController { }
-    ```
+    ```-->
 
 -   Make sure to add the following code to your App_Start/RouteConfig.cs `RegisterRoutes` Method
 

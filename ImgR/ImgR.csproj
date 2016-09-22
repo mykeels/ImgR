@@ -69,6 +69,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ImgR.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Response.cs" />
     <Compile Include="Models\Site.cs" />
     <Compile Include="Models\StringX.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
