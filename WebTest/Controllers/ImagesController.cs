@@ -6,5 +6,5 @@ using System.Web.Mvc;
 
 namespace WebTest.Controllers
 {
-    public class ImagesController : ImgR.ImagesController { }
+    public class ImagesController : ImgR.ImagesController { } 
 }

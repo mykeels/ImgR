@@ -21,6 +21,14 @@
     <link href="~/Content/ImgR.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/multiple-select/1.2.0/multiple-select.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.min.css" />
+    <script>
+        function setCookie(name, value, days) {
+            var expires = ";";
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        setCookie("screen-size", screen.width + "-" + screen.height, null);
+    </script>
     @RenderSection("head", false)
 </head>
 <body ng-app="ImgRApp">

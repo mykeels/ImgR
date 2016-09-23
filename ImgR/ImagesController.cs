@@ -186,7 +186,8 @@ namespace ImgR
         {
             string filename = (string)RouteData.Values["file_name"];
             string extension = (string)RouteData.Values["extension"];
-            string screen_size = Request.Cookies["screen-size"].Value;
+            string screen_size = null;
+            if (Request.Cookies["screen-size"] != null) screen_size = Convert.ToString(Request.Cookies["screen-size"].Value);
             var img = Models.Image.GetImage(filename);
             if (img == null) return File(Site.MapPath("~/images/" + filename + "." + extension), "image/" + extension);
             else if (!String.IsNullOrEmpty(screen_size))

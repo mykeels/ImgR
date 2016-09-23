@@ -15,6 +15,8 @@ namespace WebTest
             
             routes.MapMvcAttributeRoutes();
 
+            routes.RouteExistingFiles = true;
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
