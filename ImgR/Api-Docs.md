@@ -26,8 +26,20 @@ _Add a new temporary Image_
 ----
 _Confirm the Image's Addition to save to database_
 
+**Edit Image**
+----
+_Coming Soon_
+
+**Get Image Resize Tree**
+----
+_Coming Soon_
+
+**Get Image Backup Tree**
+----
+_Coming Soon_
+
 ### The Future
 
-The goal for ImgR is to be capable of serving as an Image Server for Multiple Web Applications. 
+The goal for ImgR is to be capable of working as an Image Server for Multiple Web Applications. 
 
 Perhaps, if there's need, we'd implement some form of Authentication System for the Applications. This could prove necessary for when adding and editing Images via the API.
