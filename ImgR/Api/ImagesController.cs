@@ -52,7 +52,11 @@ namespace ImgR.Api
         public Response<Image> Add()
         {
             var httpRequest = System.Web.HttpContext.Current.Request;
-            if (httpRequest == null) return new Response<Image>("HttpRequest should not be NULL", null, false);
+            if (httpRequest == null)
+            {
+                System.Web.HttpContext.Current.Response.StatusCode = 400;
+                return new Response<Image>("HttpRequest should not be NULL", null, false);
+            }
             if (httpRequest.Files.Count > 0)
             {
                 foreach (System.Web.HttpPostedFileBase file in httpRequest.Files)
@@ -60,6 +64,7 @@ namespace ImgR.Api
                     return new Response<Image>("New Temp Image Created", Image.AddTemp(file.InputStream.ToBytes(), file.FileName.Split('.').Last()), true);
                 }
             }
+            System.Web.HttpContext.Current.Response.StatusCode = 406;
             return new Response<Image>("HttpRequest contains no files", null, false);
         }
 

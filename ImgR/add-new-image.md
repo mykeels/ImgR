@@ -8,50 +8,102 @@ _API Endpoint to upload a new Image's data as a Temporary Image awaiting confirm
   _~/api/images/add_
 
 * **Method:**
-  
-  <_The request type_>
 
-  `GET` | `POST` | `DELETE` | `PUT`
-  
-*  **URL Params**
+    `POST`
 
-   <_If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required. Document data constraints._> 
+* **Content-Type**
 
-   **Required:**
- 
-   `id=[integer]`
-
-   **Optional:**
- 
-   `photo_id=[alphanumeric]`
+    `multipart/form-data`
 
 * **Data Params**
 
-  <_If making a post request, what should the body payload look like? URL Params rules apply here too._>
+  _This EndPoint requires that the file be pushed as HTML Form data_
 
 * **Success Response:**
   
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
-
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+    **Content:** 
  
+    ```json
+        {
+          "Message": "cxjvlymdrew",
+          "Data": {
+            "Width": 853,
+            "Height": 640,
+            "ID": 0,
+            "OwnerID": 0,
+            "OwnerType": 0,
+            "URL": "~/images/cxjvlymdrew.jpg",
+            "Category": "",
+            "Title": "",
+            "Description": "",
+            "ResizeOf": 0,
+            "BackupOf": 0,
+            "CreationTime": "2016-09-19T16:24:14.88",
+            "Active": true,
+            "ResizeForDevices": false,
+            "TargetDevice": 4,
+            "ResizeDevice": 0,
+            "Name": "cxjvlymdrew",
+            "Extension": "jpg",
+            "Data": null
+          },
+          "Status": true
+        }
+    ```
+
 * **Error Response:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
+  * **Code:** 400 Bad Request
+  * **Content:** 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
+    ```json
+        {
+          "Message": "HttpRequest should not be NULL",
+          "Data": null,
+          "Status": true
+        }
+    ```
 
-  OR
+  * **Code:** 406 Not Acceptable
+  * **Content:** 
 
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
+    ```json
+        {
+          "Message": "HttpRequest contains no files",
+          "Data": null,
+          "Status": true
+        }
+    ```
 
 * **Sample Call:**
 
-  <_Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) - this makes life easier and more predictable._> 
+    - JavaScript
+    ```js
+        $.get("~/api/images/categories/animals")
+            .success(function (response) {
+                        console.log(response);
+                    })
+            .error(errorhandler);
+    ```
+
+    - CSharp (via **Extensions.Api**)
+    ```csharp
+        Api.GetAsync<List<ImgR.Models.Image>>("~/api/images/categories/animals").Success((response) =>
+            {
+
+            }).Error((Exception ex) =>
+            {
+                Console.WriteLine(ex.Message);
+            });
+    ```
 
 * **Notes:**
 
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
+  _The tilde(~) in the urls should be replaced with the application root path._ 
+
+<div style="text-align:center;margin-top:50px;">
+
+# ![ImgR Logo](https://github.com/mykeels/ImgR/blob/master/ImgR/Content/logo.png?raw=true).NET
+
+</div>
