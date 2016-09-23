@@ -35,9 +35,18 @@ CSS Resize is done on the Client Browser, meaning that the Browser has to downlo
 
 -   Make sure to add the following code to your App_Start/RouteConfig.cs `RegisterRoutes` Method
 
-    ```cs
+    ```csharp
     routes.MapMvcAttributeRoutes();
     routes.RouteExistingFiles = true;
+    ```
+
+-   Add the following code to your global.asax.cs file
+
+    ```csharp
+        void Session_Start(object sender, EventArgs e)
+        {
+            ImgR.Models.Image.Device.Load();
+        }
     ```
 
 -   In your Web.config, add the following in the root (`<configuration>`):
