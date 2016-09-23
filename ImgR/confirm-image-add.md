@@ -105,6 +105,7 @@ _This should be used only after the Image's Data has been added using [this endp
 * **Sample Call:**
 
   - JavaScript
+
     ```js
         $.post("~/api/images/add/confirm", {
             "Width": 853,
