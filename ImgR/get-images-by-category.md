@@ -1,17 +1,15 @@
 ﻿**Get Images By Category** [[Back]](Api-Docs.md)
 ----
 
-_Get a List of Image Data in a Category, based on Search Data_
+_Get a List of Image Data in a Category, based on search/filter criteria_
 
 * **URL**
 
   _~/api/images/categories/{category}_
 
 * **Method:**
-  
-  <_The request type_>
 
-  `GET` | `POST` | `DELETE` | `PUT`
+  `GET`
   
 *  **URL Params**
 

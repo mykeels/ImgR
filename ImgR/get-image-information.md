@@ -68,7 +68,7 @@ _Use an Image's Name or Data to get its Information._
 
     - CSharp (via **Extensions.Api**)
     ```csharp
-        Api.GetAsync<List<string>>("~/api/images/imagename-sm-lp").Success((response) =>
+        Api.GetAsync<List<ImgR.Models.Image>>("~/api/images/imagename-sm-lp").Success((response) =>
             {
 
             }).Error((Exception ex) =>

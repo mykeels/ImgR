@@ -38,6 +38,23 @@
                 $(".uploadbox h4").hide();
                 $(".submit-box").show();
             });
+            $("#category").change(function () {
+                /*if ($(this).val() != 'other') {
+                }
+                else {
+                }*/
+                var value = $("#category").val();
+                if (value == "other") {
+                    $("#other").show();
+                    $("#userCategory").val("");
+                    //$("#category").val($("textarea#userCategory").val());
+                }
+                else {
+                    $("#other").hide();
+                    $("#userCategory").val($(this).val());
+                }
+            });
+            $("#userCategory").val($("#category").val());
         });
 
         var dragBox = document.getElementById("dragBox");
@@ -112,8 +129,26 @@
                         <h4>Category</h4>
                     </div>
                     <div class="col-sm-9">
-                        <input class="form-control" type="text" name="Category" required />
+                        <select class="form-control" id="category">
+                            <option value="animals">Animals</option>
+                            <option value="cars">Cars</option>
+                            <option value="greek">Greek</option>
+                            <option value="liquids">Liquids</option>
+                            <option value="trees">Trees</option>
+                            <option value="other">Others</option>
+                        </select>
+
+                        <br />
+                        <div class="row" style="display:none" id="other">
+                            <div class="col-sm-12">
+                                <label for="comment">Please Provide Category: </label>
+                                <input type="text" name="Category" class="form-control" id="userCategory" />
+                            </div>
+                        </div>
                     </div>
+                    @*<div class="col-sm-9">
+                        <input class="form-control" type="text" name="Category" required />
+                    </div>*@
                 </div>
 
                 <div class="row pad-5">

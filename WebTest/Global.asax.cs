@@ -19,5 +19,10 @@ namespace WebTest
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);            
         }
+
+        void Session_Start(object sender, EventArgs e)
+        {
+            ImgR.Models.Image.Device.Load();
+        }
     }
 }

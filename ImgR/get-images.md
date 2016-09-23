@@ -8,50 +8,118 @@ _Get a List of Image Data based on search/filter criteria_
   _~/api/images_
 
 * **Method:**
-  
-  <_The request type_>
 
-  `GET` | `POST` | `DELETE` | `PUT`
+  `GET`
   
 *  **URL Params**
 
-   <_If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required. Document data constraints._> 
-
    **Required:**
- 
-   `id=[integer]`
+
+   There are no required parameters. However, when you have a large amount of images, filtering by category is probably a better choice than getting a list of thousands of images. `#justsaying`
 
    **Optional:**
- 
-   `photo_id=[alphanumeric]`
 
-* **Data Params**
+   `?onlyActive={bool}`
+   
+   _When set to `true`, the `onlyActive` field determines whether the system filters out only Active Images to be rendered, or not. by default, it is set to `true`_
 
-  <_If making a post request, what should the body payload look like? URL Params rules apply here too._>
+   `ownerType={integer}`
+
+   _In an Application, the owner type represents the a specific image owner e.g. in a Student Records Application, we could have the following Owner Types:_
+
+   - Students (1)
+   - Dormitories (2)
+   - Courses (3)
+
+   _So, an Image with owner type value as (1) indicates that it is a student's Image.__
+
+   `ownerID={long}`
+
+   _When the owner type is set, you might want to narrow down to a specific owner using its ID. In the Student Records example given above, the owner id represents a student's ID._
 
 * **Success Response:**
-  
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+    
+  * **Content:** 
+
+    ```json
+        [
+          {
+            "Width": 2880,
+            "Height": 1800,
+            "ID": 6,
+            "OwnerID": 0,
+            "OwnerType": 0,
+            "URL": "~/images/xejgvomlzfs.jpg",
+            "Category": "animals",
+            "Title": "Jungle King (Edited)",
+            "Description": "",
+            "ResizeOf": 0,
+            "BackupOf": 0,
+            "CreationTime": "2016-09-19T13:52:06.43",
+            "Active": true,
+            "ResizeForDevices": true,
+            "TargetDevice": 4,
+            "ResizeDevice": 0,
+            "Name": "xejgvomlzfs",
+            "Extension": "jpg",
+            "Data": null
+          },
+          {
+            "Width": 480,
+            "Height": 300,
+            "ID": 7,
+            "OwnerID": 0,
+            "OwnerType": 0,
+            "URL": "~/images/xejgvomlzfs-iph-3g.jpg",
+            "Category": "animals",
+            "Title": "Jungle King (Edited)",
+            "Description": "",
+            "ResizeOf": 6,
+            "BackupOf": 0,
+            "CreationTime": "2016-09-19T13:52:06.78",
+            "Active": true,
+            "ResizeForDevices": false,
+            "TargetDevice": 4,
+            "ResizeDevice": 1,
+            "Name": "xejgvomlzfs-iph-3g",
+            "Extension": "jpg",
+            "Data": null
+          }
+        ]
+    ```
  
-* **Error Response:**
-
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
-
-  OR
-
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
 
 * **Sample Call:**
 
-  <_Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) - this makes life easier and more predictable._> 
+  
+    - JavaScript
+    ```js
+        $.get("~/api/images")
+            .success(function (response) {
+                        console.log(response);
+                    })
+            .error(errorhandler);
+    ```
+
+    - CSharp (via **Extensions.Api**)
+    ```csharp
+        Api.GetAsync<List<ImgR.Models.Image>>("~/api/images").Success((response) =>
+            {
+
+            }).Error((Exception ex) =>
+            {
+                Console.WriteLine(ex.Message);
+            });
+    ```
 
 * **Notes:**
 
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
+  _The tilde(~) in the urls should be replaced with the application root path._ 
+
+<div style="text-align:center;margin-top:50px;">
+
+# ![ImgR Logo](https://github.com/mykeels/ImgR/blob/master/ImgR/Content/logo.png?raw=true).NET
+
+</div>

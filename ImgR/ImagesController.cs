@@ -32,8 +32,9 @@ namespace ImgR
         {
             if (Data != null)
             {
-                Session.AddSafe("sessionTempImage", Models.Image.AddTemp(Data.InputStream.ToBytes(), Data.FileName.Split('.').Last()));
-                ViewData.AddSafe("viewTempImage", Models.Image.AddTemp(Data.InputStream.ToBytes(), Data.FileName.Split('.').Last()));
+                Image temp = Models.Image.AddTemp(Data.InputStream.ToBytes(), Data.FileName.Split('.').Last());
+                Session.AddSafe("sessionTempImage", temp);
+                ViewData.AddSafe("viewTempImage", temp);
             }
             if (!String.IsNullOrEmpty(Title))
             {
@@ -45,8 +46,8 @@ namespace ImgR
                     sessionImage.Category = Category;
                     sessionImage.ResizeForDevices = (ResizeForDevices == "on") ? true : false;
                     sessionImage.Active = true;
-                    sessionImage.TargetDevice = Models.Image.Device.GetDefault().ID;
-                    Models.Image.Add(sessionImage);
+                    sessionImage.TargetDevice = Image.Device.GetDefault().ID;
+                    List<Image> newImages = Image.Add(sessionImage).ToList();
                     Session.Remove("sessionTempImage");
                     return Redirect("~/images/" + sessionImage.Name);
                 }
