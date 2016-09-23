@@ -3,55 +3,141 @@
 
 _After you have uploaded an Image as a Temporary Image, You need to confirm it by providing its Information._
 
+_This should be used only after the Image's Data has been added using [this endpoint](add-new-image.md)_
+
 * **URL**
 
-  _~/api/images/add_
+  _~/api/images/add/confirm_
 
 * **Method:**
+
+    `POST`
   
-  <_The request type_>
+* **Content-Type**
 
-  `GET` | `POST` | `DELETE` | `PUT`
+   `application/json, text/json`
   
-*  **URL Params**
-
-   <_If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required. Document data constraints._> 
-
-   **Required:**
- 
-   `id=[integer]`
-
-   **Optional:**
- 
-   `photo_id=[alphanumeric]`
-
 * **Data Params**
 
-  <_If making a post request, what should the body payload look like? URL Params rules apply here too._>
+    ```json
+        {
+            "Width": 853,
+            "Height": 640,
+            "ID": 30,
+            "OwnerID": 7,
+            "OwnerType": 2,
+            "URL": null,
+            "Category": "animals",
+            "Title": "Dogs",
+            "Description": "",
+            "ResizeOf": 0,
+            "BackupOf": 0,
+            "CreationTime": null,
+            "Active": true,
+            "ResizeForDevices": false,
+            "TargetDevice": 4,
+            "ResizeDevice": 5,
+            "Name": "imagename",
+            "Extension": "jpg",
+            "Data": null
+          }
+    ```
 
 * **Success Response:**
   
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
+  _This returns a `ImgR.Models.Response<Image>` Object, with all details about the newly added image in its contents._
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+  * **Content:**
+
+    ```json
+        {
+            "Message": "",
+            "Data": {
+                "Width": 853,
+                "Height": 640,
+                "ID": 30,
+                "OwnerID": 7,
+                "OwnerType": 2,
+                "URL": "~/images/imagename.jpg",
+                "Category": "animals",
+                "Title": "Dogs",
+                "Description": "",
+                "ResizeOf": 26,
+                "BackupOf": 0,
+                "CreationTime": "2016-09-19T16:24:14.88",
+                "Active": true,
+                "ResizeForDevices": false,
+                "TargetDevice": 4,
+                "ResizeDevice": 5,
+                "Name": "imagename",
+                "Extension": "jpg",
+                "Data": null
+              },
+              "Status": true
+            }
+    ```
  
 * **Error Response:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
+  * **Code:** 406 Unacceptable Request
+  * **Content:** 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
+    ```json
+        {
+          "Message": "Request Values should not be NULL",
+          "Data": null,
+          "Status": true
+        }
+    ```
 
-  OR
+  * **Code:** 501 Server Error
+  * **Content:** 
 
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
+    ```json
+        {
+          "Message": "Failed To Add Image",
+          "Data": null,
+          "Status": true
+        }
+    ```
 
 * **Sample Call:**
 
-  <_Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) - this makes life easier and more predictable._> 
+  - JavaScript
+    ```js
+        $.post("~/api/images/add/confirm", {
+            "Width": 853,
+            "Height": 640,
+            "ID": 30,
+            "OwnerID": 7,
+            "OwnerType": 2,
+            "URL": null,
+            "Category": "animals",
+            "Title": "Dogs",
+            "Description": "",
+            "ResizeOf": 0,
+            "BackupOf": 0,
+            "CreationTime": null,
+            "Active": true,
+            "ResizeForDevices": false,
+            "TargetDevice": 4,
+            "ResizeDevice": 5,
+            "Name": "imagename",
+            "Extension": "jpg",
+            "Data": null
+          })
+            .success(function (response) {
+                        console.log(response)
+                    })
+            .error(errorhandler);
+    ```
 
 * **Notes:**
 
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
+  _The tilde(~) in the urls should be replaced with the application root path._ 
+
+  _If you intend to use ImgR as an Image Server for multiple Applications, each category could represent an Application Name or ID._ 
+
+
+# ![ImgR Logo](https://github.com/mykeels/ImgR/blob/master/ImgR/Content/logo.png?raw=true) .NET

@@ -78,32 +78,14 @@ _API Endpoint to upload a new Image's data as a Temporary Image awaiting confirm
 
 * **Sample Call:**
 
-    - JavaScript
-    ```js
-        $.get("~/api/images/categories/animals")
-            .success(function (response) {
-                        console.log(response);
-                    })
-            .error(errorhandler);
-    ```
-
-    - CSharp (via **Extensions.Api**)
-    ```csharp
-        Api.GetAsync<List<ImgR.Models.Image>>("~/api/images/categories/animals").Success((response) =>
-            {
-
-            }).Error((Exception ex) =>
-            {
-                Console.WriteLine(ex.Message);
-            });
-    ```
+   _Ermmm, coming soon!_
 
 * **Notes:**
 
   _The tilde(~) in the urls should be replaced with the application root path._ 
 
-<center>
+  _If you intend to use ImgR as an Image Server for multiple Applications, each category could represent an Application Name or ID._ 
+
+
 
 # ![ImgR Logo](https://github.com/mykeels/ImgR/blob/master/ImgR/Content/logo.png?raw=true) .NET
-
-</center>

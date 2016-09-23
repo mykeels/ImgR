@@ -46,10 +46,9 @@ _Need to get all Categories of Images stored on ImgR? This is the API Endpoint f
 
 * **Notes:**
 
+  _The tilde(~) in the urls should be replaced with the application root path._ 
+
   _If you intend to use ImgR as an Image Server for multiple Applications, each category could represent an Application Name or ID._ 
 
-<div style="text-align:center;margin-top:50px;">
 
-# ![ImgR Logo](https://github.com/mykeels/ImgR/blob/master/ImgR/Content/logo.png?raw=true).NET
-
-</div>
+# ![ImgR Logo](https://github.com/mykeels/ImgR/blob/master/ImgR/Content/logo.png?raw=true) .NET

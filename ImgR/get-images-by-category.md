@@ -119,8 +119,8 @@ _Get a List of Image Data in a Category, based on search/filter criteria_
 
   _The tilde(~) in the urls should be replaced with the application root path._ 
 
-<div style="text-align:center;margin-top:50px;">
+  _If you intend to use ImgR as an Image Server for multiple Applications, each category could represent an Application Name or ID._ 
 
-# ![ImgR Logo](https://github.com/mykeels/ImgR/blob/master/ImgR/Content/logo.png?raw=true).NET
 
-</div>
+
+# ![ImgR Logo](https://github.com/mykeels/ImgR/blob/master/ImgR/Content/logo.png?raw=true) .NET

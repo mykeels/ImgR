@@ -75,9 +75,17 @@ namespace ImgR.Api
             if (values != null)
             {
                 var ret = Image.Add(values);
-                if (ret.IsEmpty()) return new Response<IEnumerable<Image>>("Failed To Add Image", ret, false);
-                else return new Response<IEnumerable<Image>>(ret.FirstOrDefault().Name, ret, true);
+                if (ret.IsEmpty())
+                {
+                    System.Web.HttpContext.Current.Response.StatusCode = 501;
+                    return new Response<IEnumerable<Image>>("Failed To Add Image", ret, false);
+                }
+                else
+                {
+                    return new Response<IEnumerable<Image>>(ret.FirstOrDefault().Name, ret, true);
+                }
             }
+            System.Web.HttpContext.Current.Response.StatusCode = 400;
             return new Response<IEnumerable<Image>>("Request Values should not be NULL", null, false);
         }
     }
