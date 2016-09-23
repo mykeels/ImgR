@@ -82,6 +82,13 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Content\image-device-sizes.json" />
+    <None Include="Api-Docs.md" />
+    <None Include="confirm-image-add.md" />
+    <None Include="add-new-image.md" />
+    <None Include="get-images-by-category.md" />
+    <None Include="get-images.md" />
+    <None Include="get-image-information.md" />
+    <None Include="get-categories.md" />
     <None Include="Views\Images.zip" />
     <Content Include="Content\logo.png" />
     <Content Include="Views\Images\Add.cshtml" />

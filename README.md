@@ -5,6 +5,8 @@ Serving Images dynamically based on the client device is an important part of We
 
 ImgR is a .NET Class Library written in C# which has inheritable classes that let you manage your Website Images Effectively and Efficiently.
 
+ImgR has an API, and can be used as an Adaptive Image Server for Multiple Applications within your Website. View the ImgR API Documentation.
+
 ### Why not just compress the Image?
 Image Compression is not the perfect solution because of quality loss and because:
 
