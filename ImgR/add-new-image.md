@@ -102,8 +102,8 @@ _API Endpoint to upload a new Image's data as a Temporary Image awaiting confirm
 
   _The tilde(~) in the urls should be replaced with the application root path._ 
 
-<div style="text-align:center;margin-top:50px;">
+<center>
 
-# ![ImgR Logo](https://github.com/mykeels/ImgR/blob/master/ImgR/Content/logo.png?raw=true).NET
+# ![ImgR Logo](https://github.com/mykeels/ImgR/blob/master/ImgR/Content/logo.png?raw=true) .NET
 
-</div>
+</center>
