@@ -35,6 +35,7 @@ CSS Resize is done on the Client Browser, meaning that the Browser has to downlo
 
     ```cs
     routes.MapMvcAttributeRoutes();
+    routes.RouteExistingFiles = true;
     ```
 
 -   In your Web.config, add the following in the root (`<configuration>`):
@@ -71,6 +72,21 @@ This tells ImgR that `Images` is the folder to store and get images
     ```
 
 -   Copy the files in the `Contents` folder into your `~/Contents` Folder
+
+-   Add the following script to the `<head>` of the web page(s) you want to display the images on
+
+    ```js
+    <script>
+        function setCookie(name, value, days) {
+            var expires = ";";
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        setCookie("screen-size", screen.width + "-" + screen.height, null);
+    </script>
+    ```
+
+    The script should be in the `<head>` tag. This is to make sure that all image http requests contain that cookie.
 
 -   And Finally (Yea, Ikr?), Copy the contents of the `Views` Folder into your `Views` Folder. This will give you the Views you need to work with ImgR. Click [here](https://github.com/mykeels/ImgR/blob/master/ImgR/Views/Images.zip?raw=true) to download the Views as a compressed folder.
 

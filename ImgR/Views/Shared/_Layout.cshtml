@@ -23,11 +23,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.min.css" />
     <script>
         function setCookie(name, value, days) {
-            var expires = ";";
-            document.cookie = name + "=" + value + expires + "; path=/";
+            document.cookie = name + "=" + value + "; path=/";
         }
 
-        setCookie("screen-size", screen.width + "-" + screen.height, null);
+        setCookie("screen-size", screen.width + "-" + screen.height);
     </script>
     @RenderSection("head", false)
 </head>
