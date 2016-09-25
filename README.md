@@ -35,9 +35,18 @@ CSS Resize is done on the Client Browser, meaning that the Browser has to downlo
 
 -   Make sure to add the following code to your App_Start/RouteConfig.cs `RegisterRoutes` Method
 
-    ```cs
+    ```csharp
     routes.MapMvcAttributeRoutes();
     routes.RouteExistingFiles = true;
+    ```
+
+-   Add the following code to your global.asax.cs file
+
+    ```csharp
+        void Session_Start(object sender, EventArgs e)
+        {
+            ImgR.Models.Image.Device.Load();
+        }
     ```
 
 -   In your Web.config, add the following in the root (`<configuration>`):
@@ -75,18 +84,64 @@ This tells ImgR that `Images` is the folder to store and get images
 
 -   Copy the files in the `Contents` folder into your `~/Contents` Folder
 
--   Add the following script to the `<head>` of the web page(s) you want to display the images on
+-   If the ImgR Server is on the same domain as your Website, add the following script to the `<head>` of the web page(s) you want to display the images on
 
     ```js
-    <script>
         function setCookie(name, value, days) {
             var expires = ";";
             document.cookie = name + "=" + value + expires + "; path=/";
         }
 
         setCookie("screen-size", screen.width + "-" + screen.height, null);
-    </script>
     ```
+
+	_If setting cookies are a problem for you, because cookies tend to bloat http requests, you can register the device's width and height in Server's Session by executing the following script in the page's header.:_
+
+	```js
+	function registerScreen() {
+		var http = new XMLHttpRequest();
+		var xurl = "~/images/register-screen";
+		var params = "width=" + screen.width + "&height=" + screen.height;
+		http.open("POST", xurl , true);
+
+		//Send the proper header information along with the request
+		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+		http.onreadystatechange = function() {
+			if(http.readyState == 4 && http.status == 200) {
+				console.log(http.responseText);
+			}
+		}
+		http.send(params);
+	}
+	registerScreen();
+	//note that tilde(~) should be replaced with the application root url
+	```
+
+
+
+-	If however, the ImgR Server is on a different domain as the Website, simply setting a cookie would not suffice because cross domain cookies are impossible. Such an extreme situation calls for extreme measures. Setting a header on image requests is probably the only way to make the server know the client device size in this case. 
+
+	I've considered using AngularJS, but this would not cater for non-AngularJS Programmers. Therefore, i recommend executing the following script at the page's bottom, on `window.load` or `$(document).ready` if you are a jQuery user.
+
+	```js
+	document.querySelectorAll("[data-image-url]").forEach(function (imgElem) {
+        var srcUrl = $(imgElem).attr("data-image-url");
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var url = window.URL || window.webkitURL;
+                $(imgElem).attr("src", url.createObjectURL(this.response));
+            }
+        }
+        xhr.open("GET", srcUrl);
+        xhr.setRequestHeader("screen-width", screen.width);
+        xhr.setRequestHeader("screen-height", screen.height);
+        xhr.setRequestHeader("screen-size", screen.width + "-" + screen.height);
+        xhr.responseType = "blob";
+        xhr.send();
+    });
+	```
 
     The script should be in the `<head>` tag. This is to make sure that all image http requests contain that cookie.
 
