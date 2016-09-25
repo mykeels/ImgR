@@ -107,6 +107,18 @@ namespace ImgR
             return View();
         }
 
+        [Route("~/images/register-screen")]
+        public JsonResult Register(int width, int height)
+        {
+            Response.AddHeader("Access-Control-Allow-Origin", "*");
+            if (width > 0 && height > 0)
+            {
+                Site.Context().Session.AddOnce("screen-size", width + "-" + height);
+                return Json(new Response<object>((string)Session["screen-size"], null, true), JsonRequestBehavior.AllowGet);
+            }
+            return Json(new Response<object>("Invalid Screen Size", null, false), JsonRequestBehavior.AllowGet);
+        }
+
         [Route("~/images/{filename}/edit")]
         public ActionResult Edit(string Name = null, string Title = null, string Category = null, string Description = null, HttpPostedFileBase Data = null)
         {
@@ -188,7 +200,9 @@ namespace ImgR
             string filename = (string)RouteData.Values["file_name"];
             string extension = (string)RouteData.Values["extension"];
             string screen_size = null;
-            if (Request.Cookies["screen-size"] != null) screen_size = Convert.ToString(Request.Cookies["screen-size"].Value);
+            if (!String.IsNullOrEmpty((string)Site.Context().Session["screen-size"])) screen_size = (string)Site.Context().Session["screen-size"];
+            if (String.IsNullOrEmpty(screen_size) && Request.Cookies["screen-size"] != null) screen_size = Convert.ToString(Request.Cookies["screen-size"].Value);
+            if (String.IsNullOrEmpty(screen_size) && Request.Headers["screen-size"] != null) screen_size = Convert.ToString(Request.Headers["screen-size"]);
             var img = Models.Image.GetImage(filename);
             if (img == null) return File(Site.MapPath("~/images/" + filename + "." + extension), "image/" + extension);
             else if (!String.IsNullOrEmpty(screen_size))
@@ -197,6 +211,7 @@ namespace ImgR
                 int screenHeight = Convert.ToInt32(screen_size.Split('-').Last());
 
                 Models.Image.Device defaultImageDevice = Models.Image.Device.GetDevice(img.TargetDevice);
+                if (defaultImageDevice == null) defaultImageDevice = Image.Device.GetDefault();
 
                 if (img.ResizeForDevices || (img.ResizeDevice > 0))
                 {

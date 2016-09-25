@@ -82,24 +82,26 @@ namespace ImgR.Models
             return ret;
         }
 
-        public static IEnumerable<Image> GetImages(bool onlyActive = true, int ownerType = 0, long ownerID = 0)
+        public static IEnumerable<Image> GetImages(bool onlyActive = true, int ownerType = 0, long ownerID = 0, int startIndex = 0)
         {
             using (ImgRDataContext db = new ImgRDataContext())
             {
-                foreach (tbl_Image img in (from pp in db.tbl_Images where (!onlyActive || (Convert.ToBoolean(pp.Active) == true)) && (ownerType.Equals(0) || pp.OwnerType == Convert.ToInt32(ownerType)) && (ownerID.Equals(0) || Convert.ToInt64(pp.OwnerID) == ownerID) select pp).ToList())
+                foreach (tbl_Image img in (from pp in db.tbl_Images where (!onlyActive || (Convert.ToBoolean(pp.Active) == true)) && 
+                                           (ownerType.Equals(0) || pp.OwnerType == Convert.ToInt32(ownerType)) && (ownerID.Equals(0) || Convert.ToInt64(pp.OwnerID) == ownerID)
+                                           select pp).Skip(startIndex).Take(60).ToList())
                 {
                     yield return (new Image()).Map(img);
                 }
             }
         }
 
-        public static IEnumerable<Image> GetImagesByCategory(string category, bool onlyActive = true, int ownerType = 0, long ownerID = 0)
+        public static IEnumerable<Image> GetImagesByCategory(string category, bool onlyActive = true, int ownerType = 0, long ownerID = 0, int startIndex = 0)
         {
             using (ImgRDataContext db = new ImgRDataContext())
             {
                 foreach(tbl_Image img in (from pp in db.tbl_Images where pp.Category.Equals(category) && (!onlyActive || (Convert.ToBoolean(pp.Active) == true))
                                            && (ownerType.Equals(0) || pp.OwnerType == Convert.ToInt32(ownerType)) && (ownerID.Equals(0) || Convert.ToInt64(pp.OwnerID) == ownerID)
-                                          select pp))
+                                          select pp).Skip(startIndex).Take(60).ToList())
                 {
                     Image ret = (new Image()).Map(img);
                     yield return ret;
@@ -107,7 +109,7 @@ namespace ImgR.Models
             }
         }
 
-        public static Image AddTemp(byte[] Data, string extension)
+        public static Image AddTemp(byte[] Data, string extension, string filename = null)
         {
             try
             {
@@ -117,11 +119,13 @@ namespace ImgR.Models
                 else extension = "jpg";
                 ret.Extension = extension.ToLower();
                 ret.Data = Data;
-                ret.Name = CreateImageName();
+                if (!String.IsNullOrEmpty(filename)) ret.Name = filename;
+                else ret.Name = CreateImageName();
                 ret.CreationTime = DateTime.Now;
                 ret.Width = bmp.Width;
                 ret.Height = bmp.Height;
                 ret.URL = "~/images/temp/" + ret.Name + "." + ret.Extension;
+                ret.Active = true;
                 TempImages.Add(ret);
                 return ret;
             }
@@ -193,9 +197,15 @@ namespace ImgR.Models
                     imgT.Description = this.Description;
                     imgT.Category = this.Category;
                     imgT.ResizeOf = this.ID;
-                    imgT.Data.ToBitmap().Save(Site.MapPath(imgT.URL), imgT.GetImageFormat());
-                    imgT.Data.ToBitmap().Scale(160).Save(Site.MapPath(imgT.GetThumbUrl()), GetImageFormat(imgT.Extension));
-                    AddToDatabase(imgT);
+                    if (imgT.Width > 160)
+                    {
+                        imgT.Data.ToBitmap().Save(Site.MapPath(imgT.URL), imgT.GetImageFormat());
+                        if (imgT.Width > 200)
+                        {
+                            imgT.Data.ToBitmap().Scale(160).Save(Site.MapPath(imgT.GetThumbUrl()), GetImageFormat(imgT.Extension));
+                        }
+                        AddToDatabase(imgT);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -247,56 +257,59 @@ namespace ImgR.Models
 
         public static IEnumerable<Image> Add(Image img)
         {
-            img.Name = CreateImageName();
-            img.Extension = "jpg";
-            bool willReplaceExistingImage = false;
-            Image newImage = null;
-            img.URL = img.GetFileURL();
-            if (img.Data != null)
+            if (img.ID == 0)
             {
-                //save the image
-                if (System.IO.File.Exists(Site.MapPath(img.URL)))
+                if (String.IsNullOrEmpty(img.Name) || NameExists(img.Name)) img.Name = CreateImageName();
+                img.Extension = "jpg";
+                bool willReplaceExistingImage = false;
+                Image newImage = null;
+                img.URL = img.GetFileURL();
+                if (img.Data != null)
                 {
-                    // create and save a backup of the original image if exists
-                    willReplaceExistingImage = true;
-                    string newUrl = File.PreventNameClash(img.URL).Replace(Site.MapPath("~/"), "~/");
-                    string newName = File.GetFileName(newUrl).Split('.').FirstOrDefault();
-                    System.IO.File.Copy(Site.MapPath(img.URL), Site.MapPath(newUrl));
-                    newImage = GetImage(img.Name);
-                    if (newImage != null)
+                    //save the image
+                    if (System.IO.File.Exists(Site.MapPath(img.URL)))
                     {
-                        newImage.Active = false;
-                        newImage.BackupOf = newImage.ID + 0;
-                        newImage.ID = 0;
-                        newImage.Name = newName;
-                        newImage.URL = newUrl;
-                    }
-                }
-                img.Data.ToBitmap().Save(Site.MapPath(img.URL), GetImageFormat(img.Extension));
-                if (img.Data != null) img.Data.ToBitmap().Scale(160).Save(Site.MapPath(img.GetThumbUrl()), GetImageFormat(img.Extension));
-                img.CreationTime = DateTime.Now;
-                img.ID = AddToDatabase(img);
-                yield return img;
-                if (img.ResizeForDevices)
-                {
-                    foreach (var imgT in img.SaveTransforms())
-                    {
-                        yield return imgT;
-                    }
-                }
-                if (willReplaceExistingImage)
-                {
-                    using (ImgRDataContext db = new ImgRDataContext())
-                    {
-                        var query = (from pp in db.tbl_Images where pp.Name.Equals(img.Name) select pp).FirstOrDefault();
-                        if (query != null)
+                        // create and save a backup of the original image if exists
+                        willReplaceExistingImage = true;
+                        string newUrl = File.PreventNameClash(img.URL).Replace(Site.MapPath("~/"), "~/");
+                        string newName = File.GetFileName(newUrl).Split('.').FirstOrDefault();
+                        System.IO.File.Copy(Site.MapPath(img.URL), Site.MapPath(newUrl));
+                        newImage = GetImage(img.Name);
+                        if (newImage != null)
                         {
-                            query.Name = newImage.Name;
-                            query.URL = newImage.URL;
-                            query.BackupOf = img.ID;
-                            query.Active = false;
+                            newImage.Active = false;
+                            newImage.BackupOf = newImage.ID + 0;
+                            newImage.ID = 0;
+                            newImage.Name = newName;
+                            newImage.URL = newUrl;
                         }
-                        db.SubmitChanges();
+                    }
+                    img.Data.ToBitmap().Save(Site.MapPath(img.URL), GetImageFormat(img.Extension));
+                    if (img.Data != null) img.Data.ToBitmap().Scale(160).Save(Site.MapPath(img.GetThumbUrl()), GetImageFormat(img.Extension));
+                    img.CreationTime = DateTime.Now;
+                    img.ID = AddToDatabase(img);
+                    yield return img;
+                    if (img.ResizeForDevices)
+                    {
+                        foreach (var imgT in img.SaveTransforms())
+                        {
+                            yield return imgT;
+                        }
+                    }
+                    if (willReplaceExistingImage)
+                    {
+                        using (ImgRDataContext db = new ImgRDataContext())
+                        {
+                            var query = (from pp in db.tbl_Images where pp.Name.Equals(img.Name) select pp).FirstOrDefault();
+                            if (query != null)
+                            {
+                                query.Name = newImage.Name;
+                                query.URL = newImage.URL;
+                                query.BackupOf = img.ID;
+                                query.Active = false;
+                            }
+                            db.SubmitChanges();
+                        }
                     }
                 }
             }
