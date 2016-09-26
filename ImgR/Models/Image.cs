@@ -148,7 +148,7 @@ namespace ImgR.Models
 
         public string GetThumbUrl()
         {
-            return this.GetRootUrl() + this.Name + "-thumb." + this.Extension;
+            return this.GetRootUrl() + EncodeURI(this.Category) + "/" + this.Name + "-thumb." + this.Extension;
         }
 
         public static void Backup(Image img)
@@ -199,7 +199,7 @@ namespace ImgR.Models
                     imgT.ResizeOf = this.ID;
                     if (imgT.Width > 160)
                     {
-                        imgT.Data.ToBitmap().Save(Site.MapPath(imgT.URL), imgT.GetImageFormat());
+                        imgT.Data.ToBitmap().Save(Site.MapPath(imgT.GetFileURL()), imgT.GetImageFormat());
                         if (imgT.Width > 200)
                         {
                             imgT.Data.ToBitmap().Scale(160).Save(Site.MapPath(imgT.GetThumbUrl()), GetImageFormat(imgT.Extension));
@@ -264,6 +264,7 @@ namespace ImgR.Models
                 bool willReplaceExistingImage = false;
                 Image newImage = null;
                 img.URL = img.GetFileURL();
+                File.CreateFolder(img.GetRootUrl() + EncodeURI(img.Category));
                 if (img.Data != null)
                 {
                     //save the image
@@ -399,7 +400,7 @@ namespace ImgR.Models
 
         public string GetFileURL()
         {
-            return this.GetRootUrl() + this.Name + "." + this.Extension;
+            return this.GetRootUrl() + EncodeURI(this.Category) + "/" + this.Name + "." + this.Extension;
         }
 
         public static string CreateImageName()
@@ -459,6 +460,41 @@ namespace ImgR.Models
                         return System.Drawing.Imaging.ImageFormat.Bmp;
                 }
             }
+        }
+
+        private static string EncodeURI(string s1, List<char> exempt = null)
+        {
+            if (s1 != null)
+            {
+                s1 = s1.ToString();
+                string ret = s1;
+                ret = ret.Trim();
+                ret = ret.Replace("\"", "-");
+                ret = ret.Replace(" ", "-");
+                ret = ret.Replace("&", "and");
+                for (int i = 0; i < 48; i++)
+                {
+                    string s = Char.ConvertFromUtf32(i).ToString();
+                    if (exempt == null || !exempt.Contains(Convert.ToChar(Char.ConvertFromUtf32(i)))) ret = ret.Replace(s, "-");
+                }
+                for (int i = 58; i < 65; i++)
+                {
+                    string s = Char.ConvertFromUtf32(i).ToString();
+                    if (exempt == null || !exempt.Contains(Convert.ToChar(Char.ConvertFromUtf32(i)))) ret = ret.Replace(s, "-");
+                }
+                for (int i = 91; i < 97; i++)
+                {
+                    string s = Char.ConvertFromUtf32(i).ToString();
+                    if (exempt == null || !exempt.Contains(Convert.ToChar(Char.ConvertFromUtf32(i)))) ret = ret.Replace(s, "-");
+                }
+                for (int i = 123; i < 200; i++)
+                {
+                    string s = Char.ConvertFromUtf32(i).ToString();
+                    if (exempt == null || !exempt.Contains(Convert.ToChar(Char.ConvertFromUtf32(i)))) ret = ret.Replace(s, "-");
+                }
+                return ret.ToLower();
+            }
+            return "";
         }
     }
 }

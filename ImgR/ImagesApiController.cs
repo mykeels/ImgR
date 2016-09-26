@@ -16,6 +16,7 @@ namespace ImgR
         [Route("~/api/images/categories")]
         public List<string> Categories()
         {
+            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
             return Image.GetCategories();
         }
 
@@ -23,6 +24,7 @@ namespace ImgR
         [Route("~/api/images/categories/{category}")]
         public IEnumerable<Image> GetByCategory(bool onlyActive = true, int ownerType = 0, long ownerID = 0)
         {
+            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
             IHttpRouteData RouteData = Request.GetRouteData();
             string category = Convert.ToString(RouteData.Values["category"]);
             return Image.GetImagesByCategory(category, onlyActive);
@@ -32,6 +34,7 @@ namespace ImgR
         [Route("~/api/images")]
         public IEnumerable<Image> All(bool onlyActive = true, int ownerType = 0, long ownerID = 0)
         {
+            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
             return Image.GetImages(onlyActive, ownerType, ownerID);
         }
 
@@ -39,6 +42,7 @@ namespace ImgR
         [Route("~/api/images/{id}")]
         public Response<Image> GetImage()
         {
+            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
             IHttpRouteData RouteData = Request.GetRouteData();
             string filename = Convert.ToString(RouteData.Values["id"]);
             long imgId = 0;
@@ -51,6 +55,7 @@ namespace ImgR
         [Route("~/api/images/add")]
         public Response<Image> Add([FromBody()] Image values)
         {
+            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
             if (values != null)
             {
                 if (!String.IsNullOrEmpty(values.URL))
@@ -105,14 +110,23 @@ namespace ImgR
         [Route("~/api/images/add/confirm")]
         public Response<IEnumerable<Image>> AddConfirm([FromBody()] Image values)
         {
+            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
             if (values != null)
             {
                 Image temp = Image.GetTemp(values.Name);
                 Image.TempImages.Remove((from pp in Image.TempImages where pp.Name.Equals(values.Name) select pp).FirstOrDefault());
                 if (temp != null)
                 {
-                    values.Data = temp.Data;
-                    var ret = Image.Add(values).ToList();
+                    temp.Active = true;
+                    temp.Category = values.Category;
+                    temp.CreationTime = DateTime.Now;
+                    temp.Description = values.Description;
+                    temp.OwnerID = values.OwnerID;
+                    temp.OwnerType = values.OwnerType;
+                    temp.ResizeForDevices = values.ResizeForDevices;
+                    temp.TargetDevice = values.TargetDevice;
+                    temp.Title = values.Title;
+                    var ret = Image.Add(temp).ToList();
                     if (ret.IsEmpty())
                     {
                         System.Web.HttpContext.Current.Response.StatusCode = 501;
