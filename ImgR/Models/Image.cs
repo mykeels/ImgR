@@ -197,6 +197,7 @@ namespace ImgR.Models
                     imgT.Description = this.Description;
                     imgT.Category = this.Category;
                     imgT.ResizeOf = this.ID;
+                    imgT.URL = imgT.GetFileURL();
                     if (imgT.Width > 160)
                     {
                         imgT.Data.ToBitmap().Save(Site.MapPath(imgT.GetFileURL()), imgT.GetImageFormat());

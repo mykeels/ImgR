@@ -142,6 +142,27 @@ This tells ImgR that `Images` is the folder to store and get images
         xhr.send();
     });
 	```
+	
+	_Or for Background Image CSS:_
+
+	```js
+	document.querySelectorAll("[data-bg-image-url]").forEach(function (imgElem) {
+        var srcUrl = $(imgElem).attr("data-bg-image-url");
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var url = window.URL || window.webkitURL;
+                $(imgElem).css("background-image", "url('" + url.createObjectURL(this.response)) + "')";
+            }
+        }
+        xhr.open("GET", srcUrl);
+        xhr.setRequestHeader("screen-width", screen.width);
+        xhr.setRequestHeader("screen-height", screen.height);
+        xhr.setRequestHeader("screen-size", screen.width + "-" + screen.height);
+        xhr.responseType = "blob";
+        xhr.send();
+    });
+	```
 
     The script should be in the `<head>` tag. This is to make sure that all image http requests contain that cookie.
 
