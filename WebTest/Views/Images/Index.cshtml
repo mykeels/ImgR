@@ -23,6 +23,25 @@
         $(document).ready(function () {
             bind_height();
         });
+
+        $(function () {
+            document.querySelectorAll("[data-image-url]").forEach(function (imgElem) {
+                var srcUrl = $(imgElem).attr("data-image-url");
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var url = window.URL || window.webkitURL;
+                        $(imgElem).attr("src", url.createObjectURL(this.response));
+                    }
+                }
+                xhr.open("GET", srcUrl);
+                xhr.setRequestHeader("screen-width", screen.width);
+                xhr.setRequestHeader("screen-height", screen.height);
+                xhr.setRequestHeader("screen-size", screen.width + "-" + screen.height);
+                xhr.responseType = "blob";
+                xhr.send();
+            });
+        });
     </script>
 }
 
@@ -37,7 +56,7 @@
                 {
                     <div class="col-sm-2" bind-height="image-title">
                         <a href="~/images/@img.Name">
-                            <img class="img img-responsive" src="@ImgR.Models.Site.ResolveURL(img.GetThumbUrl())" alt="@Html.Raw(img.Description)" title="@img.Title" />
+                            <img class="img img-responsive" style="width:100%;height:auto" data-image-url="@ImgR.Models.Site.ResolveURL(img.URL)" alt="@Html.Raw(img.Description)" title="@img.Title" />
                         </a>
                         <h4>@(String.IsNullOrEmpty(img.Title) ? "No Title" : img.Title) - @img.GetDevice().ShortName</h4>
                         <p class="text-center">@img.GetDevice().Width x @img.GetDevice().Height</p>
@@ -52,6 +71,6 @@
                 <h3>There are no images in this gallery.</h3>
             </div>
         }
-        
+
     </div>
 </div>

@@ -20,7 +20,7 @@ namespace WebTest
             RouteConfig.RegisterRoutes(RouteTable.Routes);            
         }
 
-        void Session_Start(object sender, EventArgs e)
+        protected void Session_Start()
         {
             ImgR.Models.Image.Device.Load();
         }
