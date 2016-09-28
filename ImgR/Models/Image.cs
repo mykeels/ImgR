@@ -148,13 +148,13 @@ namespace ImgR.Models
 
         public string GetThumbUrl()
         {
-            return this.GetRootUrl() + EncodeURI(this.Category) + "/" + this.Name + "-thumb." + this.Extension;
+            return this.GetRootUrl() + this.Name + "-thumb." + this.Extension;
         }
 
         public static void Backup(Image img)
         {
             Image newImage = null;
-            string newUrl = File.PreventNameClash(img.URL).Replace(Site.MapPath("~/").Replace(@"\", "/"), "~/");
+            string newUrl = File.PreventNameClash(img.GetFileURL()).Replace(Site.MapPath("~/").Replace(@"\", "/"), "~/");
             string newName = File.GetFileName(newUrl).Split('.').FirstOrDefault();
             newImage = GetImage(img.Name);
             if (newImage != null)
@@ -167,8 +167,8 @@ namespace ImgR.Models
                 newImage.BackupOf = newImage.ID + 0;
                 newImage.ID = 0;
                 newImage.Name = newName;
-                newImage.URL = newUrl;
-                System.IO.File.Copy(Site.MapPath(img.URL), Site.MapPath(newUrl));
+                newImage.URL = newImage.GetURL();
+                System.IO.File.Copy(Site.MapPath(img.GetFileURL()), Site.MapPath(newUrl));
                 System.IO.File.Copy(Site.MapPath(img.GetThumbUrl()), Site.MapPath(newImage.GetThumbUrl()));
                 using (ImgRDataContext db = new ImgRDataContext())
                 {
@@ -197,7 +197,7 @@ namespace ImgR.Models
                     imgT.Description = this.Description;
                     imgT.Category = this.Category;
                     imgT.ResizeOf = this.ID;
-                    imgT.URL = imgT.GetFileURL();
+                    imgT.URL = this.GetURL();
                     if (imgT.Width > 160)
                     {
                         imgT.Data.ToBitmap().Save(Site.MapPath(imgT.GetFileURL()), imgT.GetImageFormat());
@@ -264,7 +264,7 @@ namespace ImgR.Models
                 img.Extension = "jpg";
                 bool willReplaceExistingImage = false;
                 Image newImage = null;
-                img.URL = img.GetFileURL();
+                img.URL = img.GetURL();
                 File.CreateFolder(img.GetRootUrl() + EncodeURI(img.Category));
                 if (img.Data != null)
                 {
@@ -286,7 +286,7 @@ namespace ImgR.Models
                             newImage.URL = newUrl;
                         }
                     }
-                    img.Data.ToBitmap().Save(Site.MapPath(img.URL), GetImageFormat(img.Extension));
+                    img.Data.ToBitmap().Save(Site.MapPath(img.GetFileURL()), GetImageFormat(img.Extension));
                     if (img.Data != null) img.Data.ToBitmap().Scale(160).Save(Site.MapPath(img.GetThumbUrl()), GetImageFormat(img.Extension));
                     img.CreationTime = DateTime.Now;
                     img.ID = AddToDatabase(img);
@@ -402,6 +402,11 @@ namespace ImgR.Models
         public string GetFileURL()
         {
             return this.GetRootUrl() + EncodeURI(this.Category) + "/" + this.Name + "." + this.Extension;
+        }
+
+        public string GetURL()
+        {
+            return this.GetRootUrl() + this.Name + "." + this.Extension;
         }
 
         public static string CreateImageName()

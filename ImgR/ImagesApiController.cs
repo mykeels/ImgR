@@ -145,5 +145,12 @@ namespace ImgR
             System.Web.HttpContext.Current.Response.StatusCode = 400;
             return new Response<IEnumerable<Image>>("Request Values should not be NULL", null, false);
         }
+
+        [HttpGet()]
+        [Route("~/api/images/devices")]
+        public Response<List<Image.Device>> GetDevices()
+        {
+            return new Response<List<Image.Device>>("Image Devices", Image.Device.Load(true), true);
+        }
     }
 }

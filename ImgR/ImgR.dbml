@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Newsletter" Class="ImgRDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=WN-SQLTEAM-DSRV;Initial Catalog=Newsletter;User ID=development" SettingsObjectName="ImgR.Properties.Settings" SettingsPropertyName="NewsletterConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WN-ITDEV-LT08;Initial Catalog=Newsletter;User ID=mykeels" SettingsObjectName="ImgR.Properties.Settings" SettingsPropertyName="NewsletterConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_Image" Member="tbl_Images">
     <Type Name="tbl_Image">
       <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -33,6 +33,7 @@
       <Column Name="Height" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Orientation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="IsDefault" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="tbl_ImageDevice_tbl_Image" Member="tbl_Images" ThisKey="ID" OtherKey="TargetDevice" Type="tbl_Image" />
     </Type>
   </Table>

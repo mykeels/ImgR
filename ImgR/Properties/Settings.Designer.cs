@@ -27,9 +27,30 @@ namespace ImgR.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WN-SQLTEAM-DSRV;Initial Catalog=Newsletter;User ID=development")]
+        public string NewsletterConnectionString {
+            get {
+                return ((string)(this["NewsletterConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WN-SQLTEAM-DSRV;Initial Catalog=Newsletter;User ID=development;Passwo" +
+            "rd=password")]
         public string ImgRConnectionString {
             get {
                 return ((string)(this["ImgRConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WN-ITDEV-LT08;Initial Catalog=Newsletter;User ID=mykeels")]
+        public string NewsletterConnectionString1 {
+            get {
+                return ((string)(this["NewsletterConnectionString1"]));
             }
         }
     }

@@ -18,6 +18,7 @@ namespace ImgR.Models
             public int Height { get; set; }
             public DeviceOrientation Orientation { get; set; }
             public bool IsDefault { get; set; }
+            public bool Active { get; set; }
 
             public static List<Device> Devices = new List<Device>();
             public enum DeviceOrientation
@@ -37,6 +38,7 @@ namespace ImgR.Models
                 ret.ShortName = this.ShortName;
                 ret.UserAgent = this.UserAgent;
                 ret.Width = this.Width;
+                ret.Active = this.Active;
                 return ret;
             }
 
@@ -51,16 +53,17 @@ namespace ImgR.Models
                 ret.ShortName = img.ShortName;
                 ret.UserAgent = img.UserAgent;
                 ret.Width = img.Width;
+                ret.Active = Convert.ToBoolean(img.Active);
                 return ret;
             }
 
-            public static List<Device> Load()
+            public static List<Device> Load(bool forceRefresh = false)
             {
-                if (Devices == null || (Devices.Count == 0))
+                if (Devices == null || (Devices.Count == 0) || forceRefresh)
                 {
                     using (ImgRDataContext db = new ImgRDataContext())
                     {
-                        Devices = db.tbl_ImageDevices.ToList().Select((device) => Map(device)).ToList();
+                        Devices = (from pp in db.tbl_ImageDevices where (Convert.ToBoolean(pp.Active) == true) select pp).ToList().Select((device) => Map(device)).ToList();
                         return Devices;
                     }
                 }
@@ -202,6 +205,7 @@ namespace ImgR.Models
                             retimg.Data = BitmapExtensions.ToBytes(retBmp);
                             retimg.Width = retBmp.Width;
                             retimg.Height = retBmp.Height;
+                            retimg.Category = img.Category;
                             retimg.Name = img.Name + "-" + dv.ShortName;
                             retimg.Extension = img.Extension;
                             retimg.ResizeDevice = dv.ID;

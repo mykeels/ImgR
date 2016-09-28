@@ -2,23 +2,23 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ImgR">
   <DataContextMoniker Name="/ImgRDataContext" />
   <nestedChildShapes>
-    <classShape Id="93b5eb7c-0a3d-4fc1-b926-f04c98938f14" absoluteBounds="3.5, 1, 2, 4.2708154296875">
+    <classShape Id="645767a5-cd51-4d17-9cf0-0d942944d77a" absoluteBounds="3.5, 1, 2, 4.2708154296875">
       <DataClassMoniker Name="/ImgRDataContext/tbl_Image" />
       <nestedChildShapes>
-        <elementListCompartment Id="8e1e8102-3060-4eee-a071-800cb3b244c2" absoluteBounds="3.515, 1.46, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="27a6b487-19ec-4f61-bf17-0b656d06103e" absoluteBounds="3.515, 1.46, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ac19c662-299e-490b-9777-241cf53c7b41" absoluteBounds="0.75, 2, 2, 2.3478011067708335">
+    <classShape Id="a77aee72-aa75-4e5f-8430-013586f3f944" absoluteBounds="0.75, 1.875, 2, 2.5401025390624996">
       <DataClassMoniker Name="/ImgRDataContext/tbl_ImageDevice" />
       <nestedChildShapes>
-        <elementListCompartment Id="68b506e8-8d19-4c81-9cc4-a8de2aa05c56" absoluteBounds="0.765, 2.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fa6a968d-9ce3-413b-b54d-e5c86801bc18" absoluteBounds="0.765, 2.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 3.17390055338542); (3.5 : 3.17390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 3.14505126953125); (3.5 : 3.14505126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ImgRDataContext/tbl_ImageDevice/tbl_ImageDevice_tbl_Image" />
       <nodes>
-        <classShapeMoniker Id="ac19c662-299e-490b-9777-241cf53c7b41" />
-        <classShapeMoniker Id="93b5eb7c-0a3d-4fc1-b926-f04c98938f14" />
+        <classShapeMoniker Id="a77aee72-aa75-4e5f-8430-013586f3f944" />
+        <classShapeMoniker Id="645767a5-cd51-4d17-9cf0-0d942944d77a" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

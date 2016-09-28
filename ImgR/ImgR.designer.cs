@@ -618,6 +618,8 @@ namespace ImgR
 		
 		private bool _IsDefault;
 		
+		private System.Nullable<bool> _Active;
+		
 		private EntitySet<tbl_Image> _tbl_Images;
 		
     #region Extensibility Method Definitions
@@ -640,6 +642,8 @@ namespace ImgR
     partial void OnOrientationChanged();
     partial void OnIsDefaultChanging(bool value);
     partial void OnIsDefaultChanged();
+    partial void OnActiveChanging(System.Nullable<bool> value);
+    partial void OnActiveChanged();
     #endregion
 		
 		public tbl_ImageDevice()
@@ -804,6 +808,26 @@ namespace ImgR
 					this._IsDefault = value;
 					this.SendPropertyChanged("IsDefault");
 					this.OnIsDefaultChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit")]
+		public System.Nullable<bool> Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this.OnActiveChanging(value);
+					this.SendPropertyChanging();
+					this._Active = value;
+					this.SendPropertyChanged("Active");
+					this.OnActiveChanged();
 				}
 			}
 		}

@@ -197,6 +197,8 @@ namespace ImgR
         [Route("~/images/{file_name}.{extension}")]
         public FilePathResult Serve()
         {
+            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+            System.Web.HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "*");
             string filename = (string)RouteData.Values["file_name"];
             string extension = (string)RouteData.Values["extension"];
             string screen_size = null;
@@ -217,11 +219,11 @@ namespace ImgR
                 {
                     List<Models.Image> resizes = img.GetResizes();
                     if (img.ResizeOf > 0) resizes = Models.Image.GetImage(img.ResizeOf).GetResizes();
-                    List<Models.Image.Device> devices = resizes.Select((imgR) => Models.Image.Device.GetDevice(imgR.ResizeDevice)).ToList();
+                    List<Models.Image.Device> devices = resizes.Select((imgR) => Models.Image.Device.GetDevice(imgR.ResizeDevice)).Where((imgR) => imgR != null).ToList();
 
                     if (screenWidth / defaultImageDevice.Width >= 0.8)
                     {
-                        return File(img.URL, "image/" + img.Extension);
+                        return File(img.GetFileURL(), "image/" + img.Extension);
                     }
                     else
                     {
@@ -233,23 +235,24 @@ namespace ImgR
                         {
                             if (screenWidth / devices[i].Width >= 0.8 || i == devices.Count - 1)
                             {
-                                return File(resizes.Where((imgR) => imgR.ResizeDevice == devices[i].ID).FirstOrDefault().URL, "image/" + resizes[i].Extension);
+                                return File(resizes.Where((imgR) => imgR.ResizeDevice == devices[i].ID).FirstOrDefault().GetFileURL(), "image/" + resizes[i].Extension);
                             }
                         }
                     }
 
                 }
-                return File(Site.MapPath(img.URL), "image/" + img.Extension);
+                return File(Site.MapPath(img.GetFileURL()), "image/" + img.Extension);
             }
             else if (Site.IsMobile())
             {
                 List<Models.Image> resizes = img.GetResizes();
-                var iphoneImage = (from pp in resizes where pp.ResizeDevice.Equals(3) select pp).FirstOrDefault();
-                return File(iphoneImage.URL, "image/" + iphoneImage.Extension);
+                var iphoneImage = (from pp in resizes where pp.ResizeDevice.Equals(1) select pp).FirstOrDefault();
+                if (iphoneImage == null) iphoneImage = img;
+                return File(iphoneImage.GetFileURL(), "image/" + iphoneImage.Extension);
             }
             else
             {
-                return File(Site.MapPath("~/images/" + filename + "." + extension), "image/" + extension);
+                return File(Site.MapPath(img.GetFileURL()), "image/" + extension);
             }
         }
 

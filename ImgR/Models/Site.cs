@@ -59,8 +59,10 @@ namespace ImgR.Models
         public static string ResolveURL(string path)
         {
             path.TrimStart('/');
-            if (path.Contains("~/")) path = path.Replace("~/", GetLeftUrl());
-            else path = GetLeftUrl() + path;
+            string leftUrl = Site.AppSettings("imgr-remote-path");
+            if (String.IsNullOrEmpty(leftUrl)) leftUrl = GetLeftUrl();
+            if (path.Contains("~/")) path = path.Replace("~/", leftUrl);
+            else path = leftUrl + path;
             return path;
         }
         public static bool IsMobile()
